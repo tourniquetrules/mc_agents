@@ -116,22 +116,37 @@ async function getChatGPTResponse(username, message) {
     ...conversationHistory
   ];
 
-  const completion = await openai.chat.completions.create({
-    model: 'gpt-3.5-turbo',
-    messages: messages,
-    max_tokens: 150,
-    temperature: 0.7
-  });
+  try {
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-3.5-turbo',
+      messages: messages,
+      max_tokens: 150,
+      temperature: 0.7
+    });
 
-  const response = completion.choices[0].message.content.trim();
-  
-  // Add assistant response to history
-  conversationHistory.push({
-    role: 'assistant',
-    content: response
-  });
+    const response = completion.choices[0].message.content.trim();
+    
+    // Add assistant response to history
+    conversationHistory.push({
+      role: 'assistant',
+      content: response
+    });
 
-  return response;
+    return response;
+  } catch (error) {
+    console.error('OpenAI API error:', error);
+    
+    // Handle specific error types
+    if (error.status === 429) {
+      throw new Error('Rate limit reached. Please try again later.');
+    } else if (error.status === 401) {
+      throw new Error('Invalid API key. Please check your OPENAI_API_KEY.');
+    } else if (error.status === 503) {
+      throw new Error('OpenAI service is temporarily unavailable.');
+    } else {
+      throw new Error('Failed to get response from ChatGPT.');
+    }
+  }
 }
 
 // Utility functions
