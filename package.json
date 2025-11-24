@@ -1,0 +1,24 @@
+{
+  "name": "mc_agents",
+  "version": "1.0.0",
+  "description": "A Minecraft bot using Mineflayer and ChatGPT for intelligent interactions",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "minecraft",
+    "bot",
+    "mineflayer",
+    "chatgpt",
+    "openai"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mineflayer": "^4.25.0",
+    "openai": "^6.9.1"
+  }
+}
