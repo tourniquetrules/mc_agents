@@ -2,6 +2,13 @@ const mineflayer = require('mineflayer');
 const OpenAI = require('openai');
 require('dotenv').config();
 
+// Validate required environment variables
+if (!process.env.OPENAI_API_KEY) {
+  console.error('ERROR: OPENAI_API_KEY environment variable is required.');
+  console.error('Please set it in your .env file or environment.');
+  process.exit(1);
+}
+
 // Configuration
 const config = {
   host: process.env.MC_HOST || 'localhost',
@@ -76,7 +83,13 @@ bot.on('whisper', async (username, message) => {
   
   try {
     const response = await getChatGPTResponse(username, message);
-    bot.whisper(username, response);
+    // Split long messages into chunks for whispers too
+    const chunks = splitMessage(response, 100);
+    for (const chunk of chunks) {
+      bot.whisper(username, chunk);
+      // Small delay between messages
+      await sleep(500);
+    }
   } catch (error) {
     console.error('Error getting ChatGPT response:', error);
     bot.whisper(username, 'Sorry, I encountered an error processing your request.');
@@ -123,6 +136,11 @@ async function getChatGPTResponse(username, message) {
       max_tokens: 150,
       temperature: 0.7
     });
+
+    // Validate response structure
+    if (!completion.choices || completion.choices.length === 0) {
+      throw new Error('No response from OpenAI API');
+    }
 
     const response = completion.choices[0].message.content.trim();
     
