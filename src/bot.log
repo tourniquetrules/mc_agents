@@ -1,0 +1,1584 @@
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 2 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 3
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin what is 2 x 2
+DEBUG: GPT Loop 1
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 2
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 3
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 4
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 5
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 6
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 7
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 8
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 9
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 10
+INFO: Model requested 0 tool calls
+@TourniquetRules: @colin what is in your inventory
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling queryInventory({})
+Inventory: {
+  "crafting_table": 1,
+  "string": 1,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "diamond_axe": 1,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "iron_pickaxe": 1,
+  "cobblestone": 58,
+  "diorite": 4,
+  "dirt": 4,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of queryInventory: {"crafting_table":1,"string":1,"raw_copper":3,"yellow_terracotta":2,"diamond_axe":1,"acacia_wood":2,...
+DEBUG: GPT Loop 2
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 3
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 4
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 5
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 6
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 7
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 8
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 9
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 10
+INFO: Model requested 0 tool calls
+@TourniquetRules: @colin what is in your inventory
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling queryInventory({})
+Inventory: {
+  "crafting_table": 1,
+  "string": 1,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "diamond_axe": 1,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "iron_pickaxe": 1,
+  "cobblestone": 58,
+  "diorite": 4,
+  "dirt": 4,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of queryInventory: {"crafting_table":1,"string":1,"raw_copper":3,"yellow_terracotta":2,"diamond_axe":1,"acacia_wood":2,...
+DEBUG: GPT Loop 2
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 3
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 4
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 5
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 6
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 7
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 8
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 9
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 10
+INFO: Model requested 0 tool calls
+@TourniquetRules: @colin what is in your inventory
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling queryInventory({})
+Inventory: {
+  "crafting_table": 1,
+  "string": 1,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "diamond_axe": 1,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "iron_pickaxe": 1,
+  "cobblestone": 58,
+  "diorite": 4,
+  "dirt": 4,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of queryInventory: {"crafting_table":1,"string":1,"raw_copper":3,"yellow_terracotta":2,"diamond_axe":1,"acacia_wood":2,...
+DEBUG: GPT Loop 2
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 3
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 4
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 5
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 6
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 7
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 8
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 9
+INFO: Model requested 0 tool calls
+DEBUG: GPT Loop 10
+INFO: Model requested 0 tool calls
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin what is 2 plus 2
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin what is in your inventory
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin come here
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"user"})
+INFO: Result of follow: {"success":false,"error":"Player user not found"}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin follow TourniquetRules
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin harvest watermelon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling hunt({"animalType":"watermelon"})
+INFO: Result of hunt: {"success":false,"error":"No watermelon found nearby."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin harvest watermelon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling hunt({"animalType":"watermelon"})
+INFO: Result of hunt: {"success":false,"error":"No watermelon found nearby."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin harvest melon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling hunt({"animalType":"melon"})
+INFO: Result of hunt: {"success":false,"error":"No melon found nearby."}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin harvest watermelon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"pumpkin"})
+INFO: Result of mineBlock: {"success":true,"message":"Could not find any more pumpkin nearby. Mined 0 total."}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin harvest watermelons
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling hunt({"animalType":"watermelon"})
+INFO: Result of hunt: {"success":false,"error":"No watermelon found nearby."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down these hay bales and collect them
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling hunt({"animalType":"hay_bale"})
+INFO: Result of hunt: {"success":false,"error":"No hay_bale found nearby."}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin cut down some hale bales
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling harvestTree({"animalType":"hay_bale"})
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Collecting items
+INFO: goTo failed: Took to long to decide path to goal!
+INFO: Done collecting items
+Inventory: {
+  "crafting_table": 1,
+  "string": 1,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "acacia_door": 1,
+  "acacia_log": 9,
+  "diamond_axe": 1,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "iron_pickaxe": 1,
+  "cobblestone": 58,
+  "diorite": 4,
+  "dirt": 2,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of harvestTree: {"success":true,"inventory":{"crafting_table":1,"string":1,"raw_copper":3,"yellow_terracotta":2,"aca...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here and chop hay
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin equip pickaxe
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling equipItem({"itemName":"pickaxe"})
+INFO: Result of equipItem: {"success":false,"error":"Unknown item name: pickaxe"}...
+DEBUG: GPT Loop 2
+INFO: Model requested 1 tool calls
+INFO: Calling equipItem({"itemName":"stone_pickaxe"})
+INFO: Result of equipItem: {"success":false,"error":"I don't have any stone_pickaxe in my inventory."}...
+DEBUG: GPT Loop 3
+INFO: Model requested 1 tool calls
+INFO: Calling harvestTree({})
+INFO: goNear failed: Took to long to decide path to goal!
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Cannot dig this block: acacia_log
+INFO: Collecting items
+INFO: goNear failed: The goal was changed before it could be completed!
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+INFO: goTo failed: Took to long to decide path to goal!
+INFO: goTo failed: Took to long to decide path to goal!
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin what is 2 plus 2
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin equip pickaxe
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling equipItem({"itemName":"pickaxe"})
+INFO: Result of equipItem: {"success":true,"message":"Equipped iron_pickaxe in hand."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down hay bales
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"hay_block","count":1})
+INFO: Found hay_block at (29, 64, 330)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 1 hay_block."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin harvest some watermelon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"melon","count":3})
+INFO: Found melon at (17, 64, 323)
+INFO: Found melon at (16, 64, 323)
+INFO: Found melon at (17, 64, 322)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 3 melon."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down some cactus
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"cactus","count":3})
+INFO: Result of mineBlock: {"success":true,"message":"Could not find any more cactus nearby. Mined 0 total."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"main"})
+INFO: Result of follow: {"success":false,"error":"Player main not found. Are you close enough?"}...
+DEBUG: GPT Loop 2
+INFO: Model requested 1 tool calls
+INFO: Calling follow({})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 3
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 4
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down this cactus
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"cactus","count":3})
+INFO: Found cactus at (47, 64, 289)
+INFO: Found cactus at (47, 65, 289)
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+INFO: Found cactus at (47, 64, 289)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 3 cactus."}...
+DEBUG: GPT Loop 2
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin turn around
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down this bamboo
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling harvestTree({})
+INFO: Collecting items
+INFO: Done collecting items
+Inventory: {
+  "crafting_table": 1,
+  "string": 1,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "acacia_door": 1,
+  "acacia_log": 11,
+  "diamond_axe": 1,
+  "hay_block": 1,
+  "melon_slice": 12,
+  "cactus": 1,
+  "iron_pickaxe": 2,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "cobblestone": 58,
+  "diorite": 4,
+  "dirt": 1,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of harvestTree: {"success":true,"inventory":{"crafting_table":1,"string":1,"raw_copper":3,"yellow_terracotta":2,"aca...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"main"})
+INFO: Result of follow: {"success":false,"error":"Player main not found. Are you close enough?"}...
+DEBUG: GPT Loop 2
+INFO: Model requested 1 tool calls
+INFO: Calling follow({})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 3
+@TourniquetRules: @colin cut down sugar cane
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin cut down this sugar cane
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({"":""})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down this cactus
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"cactus","count":1})
+INFO: Found cactus at (47, 64, 289)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 1 cactus."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin cut down more cactus
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"cactus","count":1})
+INFO: Found cactus at (50, 63, 287)
+INFO: Cannot dig this block: cactus
+INFO: Result of mineBlock: {"success":true,"message":"Mined 1 cactus."}...
+DEBUG: GPT Loop 2
+Chunk size is 53 but only 40 was read ; partial packet : {"name":"explosion","params":{"x":47.31436946120041,"y":64,"z":289.50722175221165,"playerKnockback":{"x":1.5745458602905273,"y":-1.1073136823252871e+26,"z":1.3409407138824463},"explosionParticle":{"type":121},"sound":{"soundId":101}}}; buffer :204047a83d422d5bc340500000000000004072181d948e591a013fc98ab8eab7308f3faba3f279665c0dbfb4c912d996c3a815e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":40.62258385939596,"y":63,"z":284.88878043986,"playerKnockback":{"x":-1.539534091949463,"y":3.115919839511841e-35,"z":1.6124390363693237},"explosionParticle":{"type":"dripping_lava"},"sound":{"soundId":236728}}}; buffer :2040444fb0d3f18fc2404f8000000000004071ce3871d6a85f01bfc50f740625abb43fce646708b9b90e3fd87e799b16cdac15e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 41 was read ; partial packet : {"name":"explosion","params":{"x":23.303947258564985,"y":63,"z":298.2248453717723,"playerKnockback":{"x":-1.5044282674789429,"y":8.245505056134461e-28,"z":1.630402684211731},"explosionParticle":{"type":"spit"},"sound":{"soundId":3502}}}; buffer :2040374dcf7ccf3ed7404f8000000000004072a398f775e6b401bfc0911b1282a7be3fd0b1093eaf1bc3bfdc1342c9a6cbd315e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 17 but only 15 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":1,"removedComponentCount":0,"components":[{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa090100280101db060000
+Chunk size is 17 but only 15 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":1,"removedComponentCount":0,"components":[{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090100280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":1},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa0902000301280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":1},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000301280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 96 but only 19 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":1},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}},{"slot":0,"item":{"itemCount":0}}]}}; buffer :5fb7b2020001fa0902000301280101db0600000501be0904003f081809200821070208250f12080408020f0f00013f060a0800097472616e736c617465001e626c6f636b2e6d696e6563726166742e6f6d696e6f75735f62616e6e6572000901
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":1},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000301280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":2},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa0902000302280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":2},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000302280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":3},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa0902000303280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":3},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000303280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":4},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa0902000304280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":4},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000304280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39223,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":5},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb7b2020001fa0902000305280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":5},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000305280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":6},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000306280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":7},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000307280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":8},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000308280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":9},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000309280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":10},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":11},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":12},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":13},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":14},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":15},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200030f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":16},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000310280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":17},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000311280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":18},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000312280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":19},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000313280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":20},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000314280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":21},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000315280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":22},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000316280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":23},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000317280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":24},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000318280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":25},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000319280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":26},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":27},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":28},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":29},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":30},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":31},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200031f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":32},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000320280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":33},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000321280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":34},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000322280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":35},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000323280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":36},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000324280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":37},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000325280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":38},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000326280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":39},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000327280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":40},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000328280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":41},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000329280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":42},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":43},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":44},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032c280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":45},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":46},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":47},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200032f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":48},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000330280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":49},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000331280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":50},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000332280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":51},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000333280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":52},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000334280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":53},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000335280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":54},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000336280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":55},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000337280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":56},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000338280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":57},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000339280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":58},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":59},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":60},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":61},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":62},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":63},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200033f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":64},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000340280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":65},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000341280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":66},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000342280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":67},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000343280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":68},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000344280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":69},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000345280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":70},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000346280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":71},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000347280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":72},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000348280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":73},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000349280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":74},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":75},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":76},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":77},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":78},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":79},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200034f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":80},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000350280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":81},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000351280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":82},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000352280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":83},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000353280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":84},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000354280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":85},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000355280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":86},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000356280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":87},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000357280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":88},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000358280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":89},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000359280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":90},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":91},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":92},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035c280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":93},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":94},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":95},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200035f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":96},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000360280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":97},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000361280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":98},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000362280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":99},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000363280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":100},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000364280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":101},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000365280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":102},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000366280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":103},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000367280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":104},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000368280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":105},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000369280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":106},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":107},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":108},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":109},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":110},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":111},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200036f280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":112},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000370280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":113},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000371280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":114},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000372280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":115},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000373280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":116},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000374280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":117},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000375280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":118},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000376280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":119},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000377280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":120},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000378280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":121},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa0902000379280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":122},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037a280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":123},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037b280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":124},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037c280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":125},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037d280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":126},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037e280101db060000
+Chunk size is 19 but only 17 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":127},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200037f280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":128},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":129},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":130},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038201280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":131},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038301280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":132},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":133},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":134},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":135},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":136},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":137},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":138},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038a01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":139},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038b01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":140},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038c01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":141},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038d01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":142},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038e01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":143},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038f01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":144},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":145},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":146},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039201280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":147},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":148},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":149},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":150},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":151},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":152},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":153},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":154},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039a01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":155},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039b01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":156},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039c01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":157},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039d01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":158},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039e01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":159},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200039f01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":160},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a001280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":161},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":162},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a201280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":163},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":164},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":165},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":166},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":167},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":168},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":169},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003a901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":170},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003aa01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":171},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ab01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":172},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ac01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":173},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ad01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":174},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ae01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":175},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003af01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":176},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":177},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":178},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b201280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":179},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":180},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":181},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":182},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":183},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":184},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":185},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003b901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":186},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ba01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":187},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003bb01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":188},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003bc01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":189},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003bd01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":190},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003be01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":191},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003bf01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":192},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":193},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":194},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c201280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":195},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c301280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":196},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":197},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":198},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":199},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":200},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":201},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003c901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":202},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ca01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":203},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003cb01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":204},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003cc01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":205},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003cd01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":206},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ce01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":207},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003cf01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":208},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":209},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":210},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d201280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":211},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":212},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":213},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":214},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":215},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d701280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":216},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":217},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003d901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":218},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003da01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":219},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003db01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":220},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003dc01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":221},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003dd01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":222},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003de01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":223},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003df01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":224},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":225},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":226},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e201280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":227},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":228},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":229},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":230},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e601280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":231},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":232},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":233},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003e901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":234},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ea01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":235},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003eb01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":236},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ec01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":237},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ed01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":238},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ee01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":239},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ef01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":240},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f001280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":241},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f101280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":242},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f201280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":243},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f301280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":244},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f401280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":245},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f501280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":246},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f601280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":247},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f701280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":248},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f801280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":249},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003f901280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":250},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003fa01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":251},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003fb01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":252},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003fc01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":253},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003fd01280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":254},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003fe01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":255},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa09020003ff01280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":256},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038002280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":257},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038102280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":258},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038202280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":259},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038302280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":260},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038402280101db060000
+Chunk size is 20 but only 18 was read ; partial packet : {"name":"entity_equipment","params":{"entityId":39224,"equipments":[{"slot":0,"item":{"itemCount":1,"itemId":1274,"addedComponentCount":2,"removedComponentCount":0,"components":[{"type":"damage","data":261},{"type":"potion_duration_scale","data":2.385069961855112e-38}],"removeComponents":[]}}]}}; buffer :5fb8b2020001fa090200038502280101db060000
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":43.51423075535362,"y":64,"z":296.91078317468305,"playerKnockback":{"x":-1.560963749885559,"y":-0.0014426925918087363,"z":1.64851713180542},"explosionParticle":{"type":776970},"sound":{"soundId":61}}}; buffer :204045c1d2503a6bac405000000000000040728e929160d02c01bfc7cda9babd18bb3fd3029c8ab62f3ebfdc4a303547f3e115e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 41 was read ; partial packet : {"name":"explosion","params":{"x":41.78732776331167,"y":61,"z":285.8737745596594,"playerKnockback":{"x":1.5303229093551636,"y":-645.3873291015625,"z":1.639241337776184},"explosionParticle":{"type":12553},"sound":{"soundId":107}}}; buffer :204044e4c727f95407404e8000000000004071ddfafb085d06013fc3e19fc42158ca3fd1d2a989626c62bfdc50edab1d0a4615e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 45 was read ; partial packet : {"name":"explosion","params":{"x":36.813546885762584,"y":64,"z":295.50866188955166,"playerKnockback":{"x":1.7184981107711792,"y":46.99599075317383,"z":1.6458712816238403},"explosionParticle":{"type":2093878},"sound":{"soundId":198320031}}}; buffer :20404268224dea0e754050000000000000407278237aa64589013fdbf7bf423bfbe53fd2abe9b6e67fa0bfc85e53d56807f615e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 40 was read ; partial packet : {"name":"explosion","params":{"x":35.37495858049633,"y":64,"z":292.66390822724225,"playerKnockback":{"x":1.6821898221969604,"y":-3541.710205078125,"z":1.6314499378204346},"explosionParticle":{"type":"sculk_charge_pop"},"sound":{"soundId":115}}}; buffer :204041affea48c4b0d405000000000000040724a9f5e3bb8d0013fd751ffc55d5b5d3fd0d35a2674b724bfd1d8108d8b384515e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 43 was read ; partial packet : {"name":"explosion","params":{"x":40.43437695028341,"y":59,"z":283.60252722283707,"playerKnockback":{"x":-1.5514659881591797,"y":-9.294177451956237e-20,"z":1.5277764797210693},"explosionParticle":{"type":"totem_of_undying"},"sound":{"soundId":133406001}}}; buffer :2040443799a9f5cd3e404d8000000000004071b9a3f395d08f01bfc696709fdb73db3fc38e2e41b2bace3fc47d96fa9d99d515e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 40 was read ; partial packet : {"name":"explosion","params":{"x":43.24717818633646,"y":59,"z":286.649850144385,"playerKnockback":{"x":-1.7329437732696533,"y":-277000290304,"z":1.6373660564422607},"explosionParticle":{"type":"fishing"},"sound":{"soundId":84}}}; buffer :2040459fa388e94cc3404d8000000000004071ea65c943d6f401bfddd11ad280fd023fd195361e556873bf9a05cc9d12e35a15e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({"":""})
+INFO: Player  not found
+INFO: Result of come: {"success":false,"error":"Player  not found"}...
+DEBUG: GPT Loop 2
+INFO: Model requested 1 tool calls
+INFO: Calling come({"playerName":"TourniquetRules"})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 3
+@TourniquetRules: @colin harvest some hay bales
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"hay_block","count":5})
+INFO: Found hay_block at (32, 64, 329)
+INFO: Found hay_block at (33, 64, 330)
+INFO: Found hay_block at (33, 64, 331)
+INFO: Found hay_block at (32, 64, 331)
+INFO: Found hay_block at (32, 65, 331)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 5 hay_block."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin harvest some watermelon
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"melon","count":3})
+INFO: Found melon at (17, 64, 320)
+INFO: Found melon at (17, 63, 320)
+INFO: Found melon at (18, 63, 321)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 3 melon."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({"":" "})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin how do I make sticks for torches
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin how do I make a crafting table
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling craftCraftingTable({})
+INFO: Result of craftCraftingTable: {"success":true,"message":"I already have a crafting table."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin but I want to make one, what is the recipe
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin what is the recipe for arrows
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin what can I do with horses in minecraft
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin what is in your inventory
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling queryInventory({})
+Inventory: {
+  "crafting_table": 1,
+  "string": 3,
+  "raw_copper": 3,
+  "yellow_terracotta": 2,
+  "acacia_door": 1,
+  "acacia_log": 11,
+  "diamond_axe": 1,
+  "hay_block": 6,
+  "melon_slice": 25,
+  "cactus": 2,
+  "sand": 31,
+  "arrow": 3,
+  "bone": 1,
+  "iron_pickaxe": 2,
+  "acacia_wood": 2,
+  "diamond_sword": 1,
+  "cobblestone": 60,
+  "diorite": 4,
+  "dirt": 1,
+  "iron_sword": 1,
+  "oak_fence": 1
+}
+INFO: Result of queryInventory: {"crafting_table":1,"string":3,"raw_copper":3,"yellow_terracotta":2,"acacia_door":1,"acacia_log":11,...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin mine coal
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"coal_ore","count":1})
+INFO: Found coal_ore at (-41, 21, 389)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 1 coal_ore."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin mine 3 coal
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"coal_ore","count":3})
+INFO: Found coal_ore at (-42, 21, 388)
+INFO: Found coal_ore at (-41, 20, 388)
+INFO: Found coal_ore at (-41, 20, 387)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 3 coal_ore."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({"playerName":"TourniquetRules"})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin mine ore
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin mine ore
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin mine iron
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling mineBlock({"blockName":"iron_ore","count":1})
+INFO: Found iron_ore at (-50, 26, 399)
+INFO: Result of mineBlock: {"success":true,"message":"Mined 1 iron_ore."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come to me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({"playerName":"TourniquetRules"})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin drop your crafting table
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling giveItem({"itemName":"crafting_table","count":1,"playerName":"TourniquetRules"})
+INFO: Result of giveItem: {"success":true,"message":"Dropped 1 crafting_table to TourniquetRules."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin can I make blocks out of copper
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin can I combine two used up pickaxes into one?
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin stop
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling stop({})
+INFO: Result of stop: {"success":true,"message":"Stopped."}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin come over here
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling come({})
+INFO: Result of come: {"success":true}...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin follow me
+DEBUG: GPT Loop 1
+INFO: Model requested 1 tool calls
+INFO: Calling follow({"playerName":"TourniquetRules"})
+INFO: Result of follow: {"success":true,"message":"I am now following TourniquetRules. Tell me to 'stop' or give me another ...
+DEBUG: GPT Loop 2
+@TourniquetRules: @colin how do I teleport back to the spawn point
+DEBUG: GPT Loop 1
+@TourniquetRules: @colin how do I know my worlds spawn coordinates
+DEBUG: GPT Loop 1
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 43 was read ; partial packet : {"name":"explosion","params":{"x":38.182007516220445,"y":64,"z":298.49057860217977,"playerKnockback":{"x":-1.356621265411377,"y":-6.093643862061465e+29,"z":1.287961483001709},"explosionParticle":{"type":1400347},"sound":{"soundId":8177}}}; buffer :204043174c05b4e58140500000000000004072a7d968f2c7ac01bfada5c4f0f61ecd3fa4dbec9bbc55f23fbdd8ad33e203c715e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 40 was read ; partial packet : {"name":"explosion","params":{"x":27.497229170800622,"y":67.5,"z":401.9478986276837,"playerKnockback":{"x":-1.4176288843154907,"y":6.501066341476002e-36,"z":1.7435097694396973},"explosionParticle":{"type":123},"sound":{"soundId":109}}}; buffer :20403b7f4a693334b44050e0000000000040791f2a97c05d3201bfb574dd050a432c3fdf2b547b6e0e623fcfc5bc9c5678e715e804
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":27.177984316842185,"y":66,"z":402.5300188466979,"playerKnockback":{"x":0,"y":0,"z":0},"explosionParticle":{"type":"angry_villager"},"sound":{"data":{"soundName":""}}}}; buffer :20403b2d90615409c040508000000000004079287af50acd4c0100000000000000000000000000000000000000000000000015e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":23.491184485375058,"y":66,"z":388.3843390179277,"playerKnockback":{"x":-1.387668251991272,"y":-3.6066778725714856e-29,"z":1.4003140926361084},"explosionParticle":{"type":1868337},"sound":{"soundId":22}}}; buffer :2040377dbe4434fd0c40508000000000004078462640ab893801bfb19f1d9036e15b3fb33d7eb18472173fa2933b259a879715e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":36.88468917455416,"y":64,"z":314.11528395328503,"playerKnockback":{"x":-1.330702781677246,"y":-776265342309017600000,"z":1.2664889097213745},"explosionParticle":{"type":"snowflake"},"sound":{"soundId":23775}}}; buffer :204042713d7eafeaed40500000000000004073a1d833fc91ce01bfaa5478e22853623fa21c4f5be0b9013fba6519b7a2ebab15e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 42 was read ; partial packet : {"name":"explosion","params":{"x":41.32131997158871,"y":57,"z":287.63129330700224,"playerKnockback":{"x":-1.1217942237854004,"y":-0.00005521862840396352,"z":1.2452603578567505},"explosionParticle":{"type":9989},"sound":{"soundId":8317}}}; buffer :204044a9210348c338404c8000000000004071fa19c702bc2201bf8f96f4b8679a8d3f9f64b1854efe403f7e2265a818288b15e804
+Chunk size is 53 but only 41 was read ; partial packet : {"name":"explosion","params":{"x":41.900371973682624,"y":55.24671999695778,"z":288.69999998807907,"playerKnockback":{"x":-1.66213858127594,"y":2.3270590488174712e-23,"z":1.6479789018630981},"explosionParticle":{"type":"dripping_honey"},"sound":{"soundId":63}}}; buffer :204044f33f638a99d6404b9f94855719f840720b333330000001bfd4c0f519e10f313fd2f0f94cc000d23e198a15394ff6b415e804
+Chunk size is 53 but only 43 was read ; partial packet : {"name":"explosion","params":{"x":41.981088831944575,"y":56.3091008367096,"z":288.69999998807907,"playerKnockback":{"x":-1.7471365928649902,"y":-0.6054494380950928,"z":1.6166713237762451},"explosionParticle":{"type":236798923},"sound":{"soundId":61}}}; buffer :204044fd94519fd61e404c27909dc06abf40720b333330000001bfdfa22cbf1afebc3fceef16cb87f5703e22e0c35dcbf09815e804
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+@colin has spawned.
+INFO: Initializing GPT conversation for colin
+INFO: Attempting to teleport to TourniquetRules
+Chunk size is 53 but only 41 was read ; partial packet : {"name":"explosion","params":{"x":43.84474506040744,"y":55.15236525826988,"z":289.10619356775857,"playerKnockback":{"x":-0.8923597931861877,"y":2.0201843685931959e+24,"z":1.0076587200164795},"explosionParticle":{"type":3470},"sound":{"soundId":41}}}; buffer :204045ec209b2bf429404b9380b46ca86a407211b2f806c91901bf6471b167d5e5353f80faf68e1b2a503f683b079aa04aac15e804

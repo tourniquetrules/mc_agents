@@ -1,0 +1,152 @@
+// gpt.js located in ./
+
+const fs = require('fs');
+const path = require('path');
+const OpenAI = require('openai');
+const { skillFunctions } = require('./skills.js');
+const { sleep } = require('./utils.js');
+
+// Load root env so we can reuse existing secrets if present
+const rootEnvPath = path.resolve(__dirname, '..', '..', '..', '..', '.env');
+if (fs.existsSync(rootEnvPath)) {
+    require('dotenv').config({ path: rootEnvPath });
+}
+
+let openai = null;
+const openAiKey = process.env.OPENAI_API_KEY;
+if (openAiKey && openAiKey.trim().length > 0) {
+    openai = new OpenAI({ 
+        apiKey: openAiKey,
+        defaultHeaders: { 'OpenAI-Beta': 'assistants=v2' }
+    });
+} else {
+    console.warn('WARNING: OPENAI_API_KEY not set. GPT features will be disabled.');
+}
+
+async function createGPTAssistant(bot) {
+
+    if (!openai) {
+        console.log(`INFO: Skipping GPT creation for ${bot.username} (no API key configured)`);
+        bot.gptAssistant = null;
+        bot.gptThread = null;
+        return;
+    }
+
+    console.log(`INFO: Creating GPT for ${bot.username}`);
+
+    const instrPath = path.join(__dirname, 'gpt/instructions.md');
+    const toolsPath = path.join(__dirname, 'gpt/tools.json');
+
+    let instructions;
+    let toolsData;
+    
+    try {
+        instructions = fs.readFileSync(instrPath, 'utf8');
+        const rawToolsData = fs.readFileSync(toolsPath, 'utf8');
+        toolsData = JSON.parse(rawToolsData);
+    } catch (error) {
+        console.error('Error reading files:', error);
+        return null;
+    }
+    
+    bot.gptAssistant = await openai.beta.assistants.create({
+        name: bot.username,
+        instructions: instructions,
+        tools: toolsData["tools"],
+        model: "gpt-4o"
+    });
+    bot.gptThread = await openai.beta.threads.create();
+}
+
+async function deleteGPTAssistant(bot) {
+    if (!openai) {
+        return;
+    }
+    console.log(`INFO: Deleting GPT for ${bot.username}`);
+    if (bot.gptAssistant) {
+        await openai.beta.assistants.delete(bot.gptAssistant.id);
+        bot.gptAssistant = null;
+    }
+}
+
+async function performGPTCommand(bot, command) {
+
+    if (!openai) {
+        console.warn('GPT command requested but OpenAI is not configured.');
+        return "I'm not connected to GPT right now.";
+    }
+
+    if (!bot.gptAssistant) {
+        await createGPTAssistant(bot);
+    }
+
+    const userMessage = await openai.beta.threads.messages.create(
+        bot.gptThread.id, { role: "user", content: command }
+    );
+
+    console.log(`DEBUG: Thread ID: ${bot.gptThread.id}`);
+
+    let run = await openai.beta.threads.runs.create(
+        bot.gptThread.id, { assistant_id: bot.gptAssistant.id }
+    );
+
+    console.log(`DEBUG: Run created. Run ID: ${run.id}`);
+
+    while(run.status != "completed") {
+        await sleep(1000);
+
+        console.log(`DEBUG: Retrieving run. Thread ID: ${bot.gptThread.id}, Run ID: ${run.id}`);
+        run = await openai.beta.threads.runs.retrieve(run.id, { thread_id: bot.gptThread.id });
+
+        if (run.status == "requires_action") {
+            const toolOutputs = await _handleToolCalls(
+                bot, run.required_action.submit_tool_outputs.tool_calls
+            );
+
+            run = await openai.beta.threads.runs.submitToolOutputs(
+                run.id, { thread_id: bot.gptThread.id, tool_outputs: toolOutputs }
+            );
+        }
+    }
+
+    const threadMessages = await openai.beta.threads.messages.list(bot.gptThread.id, { before: userMessage.id });
+    
+    if (!threadMessages.data || threadMessages.data.length === 0) {
+        console.log("DEBUG: No new messages found (Assistant may have run a tool without replying).");
+        return "Done.";
+    }
+
+    const latestMessage = threadMessages.data[0];
+    if (latestMessage.content && latestMessage.content.length > 0 && latestMessage.content[0].type === 'text') {
+        return latestMessage.content[0].text.value;
+    }
+    
+    return "Command executed.";
+}
+
+async function _handleToolCalls(bot, toolCalls) {
+
+    const toolOutputs = [];
+
+    for (const call of toolCalls) {
+        const funcName = call.function.name;
+        const args = JSON.parse(call.function.arguments);
+        if (!skillFunctions[funcName]) {
+            console.error(`ERROR: Function ${funcName} not found.`);
+            return toolOutputs;
+        }
+        console.log(`INFO: Calling ${funcName}(${JSON.stringify(args)})`);
+        const result = await skillFunctions[funcName](bot, ...Object.values(args));
+        const resultJson = JSON.stringify(result);
+        console.log(`INFO: Result of ${funcName}() call: ${resultJson}`);
+        toolOutputs.push({tool_call_id: call.id, output: resultJson});
+    }
+
+    return toolOutputs;
+}
+
+module.exports = {
+    createGPTAssistant,
+    deleteGPTAssistant,
+    performGPTCommand,
+};

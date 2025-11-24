@@ -1,0 +1,249 @@
+{
+    "tools": [
+        {
+            "type": "function",
+            "function": {
+                "name": "come",
+                "description": "Come near the player.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "queryInventory",
+                "description": "Summarize your inventory.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "storeInventory",
+                "description": "Find the nearest chest, go to it, and store all inventory items in the chest.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "harvestTree",
+                "description": "Find the closest tree, go to it, and harvest its wood.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "craftCraftingTable",
+                "description": "Craft a crafting table. Requires wood planks or logs in inventory.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "placeBlock",
+                "description": "Place a block from inventory into the world.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "blockName": {
+                            "type": "string",
+                            "description": "The name of the block to place (e.g. crafting_table, torch, oak_planks)"
+                        }
+                    },
+                    "required": ["blockName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "craftChest",
+                "description": "Craft a chest. Requires 8 planks and a nearby crafting table.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "follow",
+                "description": "Follow a player continuously.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "playerName": {
+                            "type": "string",
+                            "description": "The name of the player to follow. Defaults to the main player if not specified."
+                        }
+                    },
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "stop",
+                "description": "Stop moving or following.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "hunt",
+                "description": "Hunt and kill a specific type of animal/mob nearby. Do NOT use for plants/crops.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "animalType": {
+                            "type": "string",
+                            "description": "The type of animal to hunt (e.g. pig, cow, chicken, sheep)."
+                        }
+                    },
+                    "required": ["animalType"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "retrieveFromChest",
+                "description": "Take items from a nearby chest.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "The name of the item to retrieve."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many to retrieve (default 1)."
+                        }
+                    },
+                    "required": ["itemName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "craftItem",
+                "description": "Craft a specific item (e.g. ladder, planks, stick).",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "The name of the item to craft."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many to craft (default 1)."
+                        }
+                    },
+                    "required": ["itemName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "equipItem",
+                "description": "Equip an item from inventory. You can use generic names like 'pickaxe', 'sword', 'axe' and I will pick the best one.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "The name of the item to equip (e.g. pickaxe, diamond_sword)."
+                        },
+                        "destination": {
+                            "type": "string",
+                            "description": "Where to equip it: 'hand', 'head', 'torso', 'legs', 'feet', 'off-hand'. Default is 'hand'.",
+                            "enum": ["hand", "head", "torso", "legs", "feet", "off-hand"]
+                        }
+                    },
+                    "required": ["itemName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "mineBlock",
+                "description": "Find and mine a specific block type. Use 'melon' for watermelon, 'hay_block' for hay bales, 'stone' for cobblestone.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "blockName": {
+                            "type": "string",
+                            "description": "The name of the block to mine (e.g. melon, hay_block, iron_ore)."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many blocks to mine (default 1)."
+                        }
+                    },
+                    "required": ["blockName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "giveItem",
+                "description": "Drop an item or give it to a specific player.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "The name of the item to give/drop."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many to give (default 1)."
+                        },
+                        "playerName": {
+                            "type": "string",
+                            "description": "The name of the player to throw the item to. If omitted, drops on ground."
+                        }
+                    },
+                    "required": ["itemName"]
+                }
+            }
+        }
+    ]
+}
