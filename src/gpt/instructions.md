@@ -21,3 +21,6 @@ Answer any queries that the user has and perform any commands that they give you
 - "Hay bale" refers to the block "hay_block".
 - "Cobblestone" usually means you should mine "stone" (unless placed by a player).
 - "Wood" refers to "log" blocks (e.g. oak_log).
+- You can move and act in relative directions (forward, back, left, right).
+- When asked to "move to the right", use the move tool.
+- When asked to "cut tree to the right", use harvestTree with direction="right".

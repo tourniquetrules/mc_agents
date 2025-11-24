@@ -15,6 +15,8 @@ const { craftItem } = require('./skills/craftItem.js');
 const { equipItem } = require('./skills/equipItem.js');
 const { mineBlock } = require('./skills/mineBlock.js');
 const { giveItem } = require('./skills/giveItem.js');
+const { move } = require('./skills/move.js');
+const { lookAt } = require('./skills/lookAt.js');
 
 const skillFunctions = {
     come,
@@ -32,6 +34,8 @@ const skillFunctions = {
     equipItem,
     mineBlock,
     giveItem,
+    move,
+    lookAt
 };
 
 module.exports = {

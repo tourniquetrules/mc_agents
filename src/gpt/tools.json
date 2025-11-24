@@ -40,10 +40,16 @@
             "type": "function",
             "function": {
                 "name": "harvestTree",
-                "description": "Find the closest tree, go to it, and harvest its wood.",
+                "description": "Find the closest tree, go to it, and harvest its wood. Can optionally specify a relative direction.",
                 "parameters": {
                     "type": "object",
-                    "properties": {},
+                    "properties": {
+                        "direction": {
+                            "type": "string",
+                            "description": "Optional relative direction: 'forward', 'left', 'right', 'back'. If omitted, finds closest tree in any direction.",
+                            "enum": ["forward", "left", "right", "back"]
+                        }
+                    },
                     "required": []
                 }
             }
@@ -203,17 +209,22 @@
             "type": "function",
             "function": {
                 "name": "mineBlock",
-                "description": "Find and mine a specific block type. Use 'melon' for watermelon, 'hay_block' for hay bales, 'stone' for cobblestone.",
+                "description": "Find and mine a specific block type. Use 'melon' for watermelon, 'hay_block' for hay bales, 'stone' for cobblestone. Can specify relative direction.",
                 "parameters": {
                     "type": "object",
                     "properties": {
                         "blockName": {
                             "type": "string",
-                            "description": "The name of the block to mine (e.g. melon, hay_block, iron_ore)."
+                            "description": "The name of the block to mine (e.g. melon, hay_block, iron_ore, cactus)."
                         },
                         "count": {
                             "type": "number",
                             "description": "How many blocks to mine (default 1)."
+                        },
+                        "direction": {
+                            "type": "string",
+                            "description": "Optional relative direction: 'forward', 'left', 'right', 'back'.",
+                            "enum": ["forward", "left", "right", "back"]
                         }
                     },
                     "required": ["blockName"]
@@ -242,6 +253,45 @@
                         }
                     },
                     "required": ["itemName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "move",
+                "description": "Move in a specific direction relative to the bot's current facing.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "direction": {
+                            "type": "string",
+                            "description": "Direction to move: 'forward', 'back', 'left', 'right'.",
+                            "enum": ["forward", "back", "left", "right"]
+                        },
+                        "distance": {
+                            "type": "number",
+                            "description": "Distance in blocks (default 1)."
+                        }
+                    },
+                    "required": ["direction"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "lookAt",
+                "description": "Look at a player.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "username": {
+                            "type": "string",
+                            "description": "The username of the player to look at."
+                        }
+                    },
+                    "required": ["username"]
                 }
             }
         }

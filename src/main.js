@@ -83,6 +83,10 @@ async function onBotChat(bot, username, message) {
     const regex = new RegExp(`^@${bot.username}`, 'i');
     const command = message.replace(regex, '').trim();
 
+    // Increment command ID to invalidate old commands
+    bot.currentCommandId = (bot.currentCommandId || 0) + 1;
+    const commandId = bot.currentCommandId;
+
     // Check for command strings
     if (command.startsWith('/')) {
 
@@ -99,15 +103,19 @@ async function onBotChat(bot, username, message) {
         }
 
         // Process some other command
-        await performCommand(bot, command);
+        performCommand(bot, command).catch(err => console.error(err));
     } else {
 
         // Send command to GPT
         bot.chat("Thinking...");
         // Prepend the username so the AI knows who is speaking
         const gptPrompt = `@${username}: ${command}`;
-        const response = await performGPTCommand(bot, gptPrompt);
-        bot.chat(response);
+
+        performGPTCommand(bot, gptPrompt, commandId).then(response => {
+            if (bot.currentCommandId === commandId) {
+                bot.chat(response);
+            }
+        }).catch(err => console.error(err));
     }
 }
 

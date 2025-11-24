@@ -4,26 +4,20 @@ const { goNear } = require('./goNear');
 const { digBlock } = require('./digBlock');
 const Vec3 = require('vec3');
 
-async function mineBlock(bot, blockName, count = 1) {
+async function mineBlock(bot, blockName, count = 1, direction = null) {
+    const commandId = bot.currentCommandId;
     const mcData = require('minecraft-data')(bot.version);
     let minedCount = 0;
 
     // Resolve block ID
-    // Handle "cobblestone" special case: In the world, it is "stone" (or deepslate, etc.)
-    // But if the user specifically asks for "cobblestone", they usually mean "mine stone to get cobblestone".
-    // However, if they ask for "stone", they might mean "stone".
-    // Let's check if the block exists.
     let targetBlockName = blockName;
     
     // Handle common aliases
-    // First, normalize spaces to underscores (e.g. "sugar cane" -> "sugar_cane")
     if (targetBlockName.includes(' ')) {
         targetBlockName = targetBlockName.replace(/ /g, '_');
     }
 
     if (blockName === 'cobblestone') {
-        // Check if there is actual cobblestone nearby (placed by player/dungeon)
-        // If not, assume they mean stone.
         const cobbleId = mcData.blocksByName['cobblestone'].id;
         const hasCobble = bot.findBlock({ matching: cobbleId, maxDistance: 32 });
         if (!hasCobble) {
@@ -42,14 +36,41 @@ async function mineBlock(bot, blockName, count = 1) {
     }
 
     for (let i = 0; i < count; i++) {
+        if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
+
         // Find the nearest block of this type
         const block = bot.findBlock({
             matching: (blk) => {
                 if (blk.type !== blockType.id) return false;
-                // If mining stone/deepslate, ensure it is exposed to air/water so we don't xray into walls
-                // For ores, we might want to dig in, but for stone, surface is better.
-                // Actually, let's just find any for now, but maybe prioritize visible ones?
-                // bot.findBlock defaults to nearest, which is usually visible.
+
+                if (direction) {
+                     // Check angle relative to bot
+                    const dx = blk.position.x - bot.entity.position.x;
+                    const dz = blk.position.z - bot.entity.position.z;
+                    const angleToBlock = Math.atan2(-dx, dz);
+
+                    let botYaw = bot.entity.yaw % (2 * Math.PI);
+                    if (botYaw > Math.PI) botYaw -= 2 * Math.PI;
+                    if (botYaw < -Math.PI) botYaw += 2 * Math.PI;
+
+                    let targetAngleOffset = 0;
+                    switch (direction.toLowerCase()) {
+                        case 'front': case 'forward': targetAngleOffset = 0; break;
+                        case 'back': case 'backward': targetAngleOffset = Math.PI; break;
+                        case 'left': targetAngleOffset = -Math.PI / 2; break;
+                        case 'right': targetAngleOffset = Math.PI / 2; break;
+                    }
+
+                    let targetAngle = botYaw + targetAngleOffset;
+                    if (targetAngle > Math.PI) targetAngle -= 2 * Math.PI;
+                    if (targetAngle < -Math.PI) targetAngle += 2 * Math.PI;
+
+                    let diff = Math.abs(angleToBlock - targetAngle);
+                    if (diff > Math.PI) diff = 2 * Math.PI - diff;
+
+                    return diff < Math.PI / 4;
+                }
+
                 return true;
             },
             maxDistance: 32,
@@ -67,13 +88,15 @@ async function mineBlock(bot, blockName, count = 1) {
 
         // Go to the block
         // For cactus, stay further away to avoid pricking
-        const approachRange = (targetBlockName === 'cactus') ? 4 : 3;
+        const approachRange = (targetBlockName === 'cactus') ? 3.5 : 3;
         const moveResult = await goNear(bot, block.position, approachRange); 
         
         if (!moveResult.success) {
             console.log(`WARN: Could not reach ${blockName} at ${block.position}`);
             continue; 
         }
+
+        if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
 
         // Equip appropriate tool (Pickaxe for ores)
         // We look for any pickaxe in inventory
@@ -106,10 +129,12 @@ async function mineBlock(bot, blockName, count = 1) {
             // Walk to the block position to collect drops
             // We wait a split second for the block to break and drop
             await new Promise(r => setTimeout(r, 500));
+
+            if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
             
             // For cactus, don't walk directly into the spot (range 1) as items might be near other cactus
-            // Range 2 should be close enough to pick up items (pickup radius is ~2 blocks)
-            const collectRange = (targetBlockName === 'cactus') ? 2 : 1;
+            // Range 2.5 should be safe and close enough to pick up items
+            const collectRange = (targetBlockName === 'cactus') ? 2.5 : 1;
             await goNear(bot, block.position, collectRange);
         } catch (err) {
             console.error(`ERROR: Failed to mine block at ${block.position}:`, err);

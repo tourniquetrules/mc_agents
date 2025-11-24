@@ -9,21 +9,31 @@ const Vec3 = require('vec3');
 
 const LOG_BLOCKS = ['oak_log', 'spruce_log', 'birch_log', 'jungle_log', 'acacia_log', 'dark_oak_log'];
 
-async function harvestTree(bot) {
+async function harvestTree(bot, direction = null) {
+    const commandId = bot.currentCommandId;
 
     // Find the closest tree
-    const treeBase = await findClosestTree(bot);
+    const treeBase = await findClosestTree(bot, direction);
     if (!treeBase) {
         console.log("INFO: No tree found within range.");
         return { success: true };
     }
 
+    // Check interruption
+    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
+
     // Go to the tree
     await goNear(bot, treeBase);
 
+    // Check interruption
+    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
+
     // Harvest the tree
     const droppedItems = [];
-    await harvestAdjacentTreeBlocks(bot, droppedItems, treeBase);
+    await harvestAdjacentTreeBlocks(bot, droppedItems, treeBase, new Set(), commandId);
+
+    // Check interruption
+    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
 
     // Wait for last item to fall to the ground.
     await sleep(1000);
@@ -32,6 +42,7 @@ async function harvestTree(bot) {
     console.log("INFO: Collecting items")
     try {
         for (const item of droppedItems) {
+            if (commandId && bot.currentCommandId !== commandId) break;
             await goTo(bot, item.position);
         }
     } catch (error) {
@@ -41,12 +52,52 @@ async function harvestTree(bot) {
     return { success: true, inventory: queryInventory(bot) };
 }
 
-async function findClosestTree(bot) {
+async function findClosestTree(bot, direction = null) {
     const treeBlocks = LOG_BLOCKS;
     const maxDistance = 64; // Maximum search radius for trees
+
+    const matching = (block) => {
+        if (!treeBlocks.includes(block.name)) return false;
+        if (direction) {
+            // Check angle relative to bot
+            const dx = block.position.x - bot.entity.position.x;
+            const dz = block.position.z - bot.entity.position.z;
+
+            // Calculate angle to block. Matches bot.entity.yaw: 0=South(+Z), PI/2=West(-X)
+            // atan2(-dx, dz) produces this mapping
+            const angleToBlock = Math.atan2(-dx, dz);
+
+            // Normalize bot yaw to -PI to PI
+            let botYaw = bot.entity.yaw % (2 * Math.PI);
+            if (botYaw > Math.PI) botYaw -= 2 * Math.PI;
+            if (botYaw < -Math.PI) botYaw += 2 * Math.PI;
+
+            // Determine target angle based on direction
+            let targetAngleOffset = 0;
+            switch (direction.toLowerCase()) {
+                case 'front': case 'forward': targetAngleOffset = 0; break;
+                case 'back': case 'backward': targetAngleOffset = Math.PI; break;
+                case 'left': targetAngleOffset = -Math.PI / 2; break; // East from South
+                case 'right': targetAngleOffset = Math.PI / 2; break; // West from South
+            }
+
+            let targetAngle = botYaw + targetAngleOffset;
+            if (targetAngle > Math.PI) targetAngle -= 2 * Math.PI;
+            if (targetAngle < -Math.PI) targetAngle += 2 * Math.PI;
+
+            // Difference
+            let diff = Math.abs(angleToBlock - targetAngle);
+            if (diff > Math.PI) diff = 2 * Math.PI - diff;
+
+            // Allow cone of 45 degrees (PI/4)
+            return diff < Math.PI / 4;
+        }
+        return true;
+    };
+
     const block = bot.findBlock({
         point: bot.entity.position,
-        matching: block => treeBlocks.includes(block.name),
+        matching: matching,
         maxDistance: maxDistance,
         minCount: 1,
     });
@@ -60,7 +111,8 @@ async function findClosestTree(bot) {
     }
 }
 
-async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = new Set()) {
+async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = new Set(), commandId = null) {
+    if (commandId && bot.currentCommandId !== commandId) return;
 
     const directions = [];
     for (let dx = -1; dx <= 1; dx++) {
@@ -72,6 +124,8 @@ async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = 
     }
 
     for (const direction of directions) {
+        if (commandId && bot.currentCommandId !== commandId) return;
+
         const newPos = position.clone().add(direction);
         const key = newPos.toString();
 
@@ -96,7 +150,7 @@ async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = 
                 bot.removeListener('itemDrop', itemDropCallback)
 
                 // Continue harvesting
-                await harvestAdjacentTreeBlocks(bot, droppedItems, newPos, visited);
+                await harvestAdjacentTreeBlocks(bot, droppedItems, newPos, visited, commandId);
             }
         }
     }

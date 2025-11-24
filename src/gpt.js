@@ -73,7 +73,11 @@ async function deleteGPTAssistant(bot) {
     console.log(`INFO: Cleared GPT history for ${bot.username}`);
 }
 
-async function performGPTCommand(bot, command) {
+async function performGPTCommand(bot, command, commandId = null) {
+
+    // Default to current command ID if not provided (for internal calls?)
+    // But mainly passed from main.js
+    const currentId = commandId || bot.currentCommandId;
 
     if (!openai) {
         console.warn('GPT command requested but OpenAI is not configured.');
@@ -93,6 +97,12 @@ async function performGPTCommand(bot, command) {
     const MAX_LOOPS = 10; // Prevent infinite loops
 
     while (keepLooping && loopCount < MAX_LOOPS) {
+        // Check for interruption
+        if (bot.currentCommandId !== currentId) {
+            console.log("INFO: GPT command interrupted.");
+            return "Interrupted.";
+        }
+
         loopCount++;
         console.log(`DEBUG: GPT Loop ${loopCount}`);
 
@@ -129,7 +139,36 @@ async function performGPTCommand(bot, command) {
                     console.log(`INFO: Calling ${funcName}(${JSON.stringify(args)})`);
                     let result;
                     try {
-                        result = await skillFunctions[funcName](bot, ...Object.values(args));
+                        // Map arguments explicitly to ensure correct order
+                        const argMapping = {
+                            "come": [],
+                            "queryInventory": [],
+                            "storeInventory": [],
+                            "harvestTree": ["direction"],
+                            "craftCraftingTable": [],
+                            "placeBlock": ["blockName"],
+                            "craftChest": [],
+                            "follow": ["playerName"],
+                            "stop": [],
+                            "hunt": ["animalType"],
+                            "retrieveFromChest": ["itemName", "count"],
+                            "craftItem": ["itemName", "count"],
+                            "equipItem": ["itemName", "destination"],
+                            "mineBlock": ["blockName", "count", "direction"],
+                            "giveItem": ["itemName", "count", "playerName"],
+                            "move": ["direction", "distance"],
+                            "lookAt": ["username"]
+                        };
+
+                        let funcArgs = [];
+                        if (argMapping[funcName]) {
+                            funcArgs = argMapping[funcName].map(key => args[key]);
+                        } else {
+                            console.warn(`WARN: No argument mapping for ${funcName}, using default order.`);
+                            funcArgs = Object.values(args);
+                        }
+
+                        result = await skillFunctions[funcName](bot, ...funcArgs);
                     } catch (err) {
                         result = { error: err.message };
                     }
