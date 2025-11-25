@@ -316,11 +316,49 @@
             "type": "function",
             "function": {
                 "name": "eat",
-                "description": "Eat food from inventory if hungry.",
+                "description": "Eat food from inventory. If no name specified, eats best food.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "foodName": {
+                            "type": "string",
+                            "description": "Optional name of food to eat (e.g. bread, apple)."
+                        }
+                    },
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "status",
+                "description": "Check health and food status.",
                 "parameters": {
                     "type": "object",
                     "properties": {},
                     "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "locateBlock",
+                "description": "Locate specific blocks nearby and return their coordinates.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "blockName": {
+                            "type": "string",
+                            "description": "The name of the block to locate (e.g. diamond_ore)."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many to find (default 1)."
+                        }
+                    },
+                    "required": ["blockName"]
                 }
             }
         }

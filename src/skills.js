@@ -19,6 +19,8 @@ const { move } = require('./skills/move.js');
 const { lookAt } = require('./skills/lookAt.js');
 const { fight } = require('./skills/fight.js');
 const { eat } = require('./skills/eat.js');
+const { status } = require('./skills/status.js');
+const { locateBlock } = require('./skills/locateBlock.js');
 
 const skillFunctions = {
     come,
@@ -39,7 +41,9 @@ const skillFunctions = {
     move,
     lookAt,
     fight,
-    eat
+    eat,
+    status,
+    locateBlock
 };
 
 module.exports = {
