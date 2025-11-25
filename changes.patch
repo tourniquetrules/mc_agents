@@ -1,0 +1,914 @@
+From 5eca44d6ebe081d5fb2debe8737633c1b8a42a9f Mon Sep 17 00:00:00 2001
+From: "google-labs-jules[bot]"
+ <161369871+google-labs-jules[bot]@users.noreply.github.com>
+Date: Tue, 25 Nov 2025 16:08:35 +0000
+Subject: [PATCH] Apply patch /tmp/fac61e89-5b99-469d-b757-c5c8bf78bbe5.patch
+
+---
+ src/config.js             |   2 +-
+ src/gpt.js                |  47 +++++++++++++-
+ src/gpt/instructions.md   |   5 +-
+ src/gpt/tools.json        | 125 +++++++++++++++++++++++++++++++++++--
+ src/main.js               |  14 ++++-
+ src/skills.js             |  12 ++++
+ src/skills/eat.js         |  36 +++++++++++
+ src/skills/fight.js       | 126 ++++++++++++++++++++++++++++++++++++++
+ src/skills/harvestTree.js |  68 +++++++++++++++++---
+ src/skills/locateBlock.js |  37 +++++++++++
+ src/skills/lookAt.js      |  20 ++++++
+ src/skills/mineBlock.js   |  55 ++++++++++++-----
+ src/skills/move.js        |  42 +++++++++++++
+ src/skills/status.js      |  14 +++++
+ 14 files changed, 570 insertions(+), 33 deletions(-)
+ create mode 100644 src/skills/eat.js
+ create mode 100644 src/skills/fight.js
+ create mode 100644 src/skills/locateBlock.js
+ create mode 100644 src/skills/lookAt.js
+ create mode 100644 src/skills/move.js
+ create mode 100644 src/skills/status.js
+
+diff --git a/src/config.js b/src/config.js
+index 13746ef..93a177d 100644
+--- a/src/config.js
++++ b/src/config.js
+@@ -8,7 +8,7 @@ const API_BASE_URL = "http://192.168.2.64:1234/v1";
+ const PLAYER_NAME = "TourniquetRules";
+
+ const BOT_CONFIG = {
+-    username: "colin",
++    username: "Luddite",
+     host: MINECRAFT_HOST,
+     port: MINECRAFT_PORT,
+     version: "1.21.8",
+diff --git a/src/gpt.js b/src/gpt.js
+index f59f7f2..f5de438 100644
+--- a/src/gpt.js
++++ b/src/gpt.js
+@@ -73,7 +73,11 @@ async function deleteGPTAssistant(bot) {
+     console.log(`INFO: Cleared GPT history for ${bot.username}`);
+ }
+
+-async function performGPTCommand(bot, command) {
++async function performGPTCommand(bot, command, commandId = null) {
++
++    // Default to current command ID if not provided (for internal calls?)
++    // But mainly passed from main.js
++    const currentId = commandId || bot.currentCommandId;
+
+     if (!openai) {
+         console.warn('GPT command requested but OpenAI is not configured.');
+@@ -93,6 +97,12 @@ async function performGPTCommand(bot, command) {
+     const MAX_LOOPS = 10; // Prevent infinite loops
+
+     while (keepLooping && loopCount < MAX_LOOPS) {
++        // Check for interruption
++        if (bot.currentCommandId !== currentId) {
++            console.log("INFO: GPT command interrupted.");
++            return "Interrupted.";
++        }
++
+         loopCount++;
+         console.log(`DEBUG: GPT Loop ${loopCount}`);
+
+@@ -129,7 +139,40 @@ async function performGPTCommand(bot, command) {
+                     console.log(`INFO: Calling ${funcName}(${JSON.stringify(args)})`);
+                     let result;
+                     try {
+-                        result = await skillFunctions[funcName](bot, ...Object.values(args));
++                        // Map arguments explicitly to ensure correct order
++                        const argMapping = {
++                            "come": [],
++                            "queryInventory": [],
++                            "storeInventory": [],
++                            "harvestTree": ["direction"],
++                            "craftCraftingTable": [],
++                            "placeBlock": ["blockName"],
++                            "craftChest": [],
++                            "follow": ["playerName"],
++                            "stop": [],
++                            "hunt": ["animalType"],
++                            "retrieveFromChest": ["itemName", "count"],
++                            "craftItem": ["itemName", "count"],
++                            "equipItem": ["itemName", "destination"],
++                            "mineBlock": ["blockName", "count", "direction"],
++                            "giveItem": ["itemName", "count", "playerName"],
++                            "move": ["direction", "distance"],
++                            "lookAt": ["username"],
++                            "fight": ["mobType"],
++                            "eat": ["foodName"],
++                            "status": [],
++                            "locateBlock": ["blockName", "count"]
++                        };
++
++                        let funcArgs = [];
++                        if (argMapping[funcName]) {
++                            funcArgs = argMapping[funcName].map(key => args[key]);
++                        } else {
++                            console.warn(`WARN: No argument mapping for ${funcName}, using default order.`);
++                            funcArgs = Object.values(args);
++                        }
++
++                        result = await skillFunctions[funcName](bot, ...funcArgs);
+                     } catch (err) {
+                         result = { error: err.message };
+                     }
+diff --git a/src/gpt/instructions.md b/src/gpt/instructions.md
+index 9e51e2b..f658b4c 100644
+--- a/src/gpt/instructions.md
++++ b/src/gpt/instructions.md
+@@ -20,4 +20,7 @@ Answer any queries that the user has and perform any commands that they give you
+ - "Watermelon" refers to the block "melon".
+ - "Hay bale" refers to the block "hay_block".
+ - "Cobblestone" usually means you should mine "stone" (unless placed by a player).
+-- "Wood" refers to "log" blocks (e.g. oak_log).
+\ No newline at end of file
++- "Wood" refers to "log" blocks (e.g. oak_log).
++- You can move and act in relative directions (forward, back, left, right).
++- When asked to "move to the right", use the move tool.
++- When asked to "cut tree to the right", use harvestTree with direction="right".
+\ No newline at end of file
+diff --git a/src/gpt/tools.json b/src/gpt/tools.json
+index db63d02..479a4b2 100644
+--- a/src/gpt/tools.json
++++ b/src/gpt/tools.json
+@@ -40,10 +40,16 @@
+             "type": "function",
+             "function": {
+                 "name": "harvestTree",
+-                "description": "Find the closest tree, go to it, and harvest its wood.",
++                "description": "Find the closest tree, go to it, and harvest its wood. Can optionally specify a relative direction.",
+                 "parameters": {
+                     "type": "object",
+-                    "properties": {},
++                    "properties": {
++                        "direction": {
++                            "type": "string",
++                            "description": "Optional relative direction: 'forward', 'left', 'right', 'back'. If omitted, finds closest tree in any direction.",
++                            "enum": ["forward", "left", "right", "back"]
++                        }
++                    },
+                     "required": []
+                 }
+             }
+@@ -203,17 +209,22 @@
+             "type": "function",
+             "function": {
+                 "name": "mineBlock",
+-                "description": "Find and mine a specific block type. Use 'melon' for watermelon, 'hay_block' for hay bales, 'stone' for cobblestone.",
++                "description": "Find and mine a specific block type. Use 'melon' for watermelon, 'hay_block' for hay bales, 'stone' for cobblestone. Can specify relative direction.",
+                 "parameters": {
+                     "type": "object",
+                     "properties": {
+                         "blockName": {
+                             "type": "string",
+-                            "description": "The name of the block to mine (e.g. melon, hay_block, iron_ore)."
++                            "description": "The name of the block to mine (e.g. melon, hay_block, iron_ore, cactus)."
+                         },
+                         "count": {
+                             "type": "number",
+                             "description": "How many blocks to mine (default 1)."
++                        },
++                        "direction": {
++                            "type": "string",
++                            "description": "Optional relative direction: 'forward', 'left', 'right', 'back'.",
++                            "enum": ["forward", "left", "right", "back"]
+                         }
+                     },
+                     "required": ["blockName"]
+@@ -244,6 +255,112 @@
+                     "required": ["itemName"]
+                 }
+             }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "move",
++                "description": "Move in a specific direction relative to the bot's current facing.",
++                "parameters": {
++                    "type": "object",
++                    "properties": {
++                        "direction": {
++                            "type": "string",
++                            "description": "Direction to move: 'forward', 'back', 'left', 'right'.",
++                            "enum": ["forward", "back", "left", "right"]
++                        },
++                        "distance": {
++                            "type": "number",
++                            "description": "Distance in blocks (default 1)."
++                        }
++                    },
++                    "required": ["direction"]
++                }
++            }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "lookAt",
++                "description": "Look at a player.",
++                "parameters": {
++                    "type": "object",
++                    "properties": {
++                        "username": {
++                            "type": "string",
++                            "description": "The username of the player to look at."
++                        }
++                    },
++                    "required": ["username"]
++                }
++            }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "fight",
++                "description": "Fight a specific enemy/mob. Requires appropriate weapons (bow for skeleton, sword for zombie).",
++                "parameters": {
++                    "type": "object",
++                    "properties": {
++                        "mobType": {
++                            "type": "string",
++                            "description": "The type of mob to fight (e.g. skeleton, zombie)."
++                        }
++                    },
++                    "required": ["mobType"]
++                }
++            }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "eat",
++                "description": "Eat food from inventory. If no name specified, eats best food.",
++                "parameters": {
++                    "type": "object",
++                    "properties": {
++                        "foodName": {
++                            "type": "string",
++                            "description": "Optional name of food to eat (e.g. bread, apple)."
++                        }
++                    },
++                    "required": []
++                }
++            }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "status",
++                "description": "Check health and food status.",
++                "parameters": {
++                    "type": "object",
++                    "properties": {},
++                    "required": []
++                }
++            }
++        },
++        {
++            "type": "function",
++            "function": {
++                "name": "locateBlock",
++                "description": "Locate specific blocks nearby and return their coordinates.",
++                "parameters": {
++                    "type": "object",
++                    "properties": {
++                        "blockName": {
++                            "type": "string",
++                            "description": "The name of the block to locate (e.g. diamond_ore)."
++                        },
++                        "count": {
++                            "type": "number",
++                            "description": "How many to find (default 1)."
++                        }
++                    },
++                    "required": ["blockName"]
++                }
++            }
+         }
+     ]
+ }
+\ No newline at end of file
+diff --git a/src/main.js b/src/main.js
+index 7d402a2..1ae3bd9 100644
+--- a/src/main.js
++++ b/src/main.js
+@@ -83,6 +83,10 @@ async function onBotChat(bot, username, message) {
+     const regex = new RegExp(`^@${bot.username}`, 'i');
+     const command = message.replace(regex, '').trim();
+
++    // Increment command ID to invalidate old commands
++    bot.currentCommandId = (bot.currentCommandId || 0) + 1;
++    const commandId = bot.currentCommandId;
++
+     // Check for command strings
+     if (command.startsWith('/')) {
+
+@@ -99,15 +103,19 @@ async function onBotChat(bot, username, message) {
+         }
+
+         // Process some other command
+-        await performCommand(bot, command);
++        performCommand(bot, command).catch(err => console.error(err));
+     } else {
+
+         // Send command to GPT
+         bot.chat("Thinking...");
+         // Prepend the username so the AI knows who is speaking
+         const gptPrompt = `@${username}: ${command}`;
+-        const response = await performGPTCommand(bot, gptPrompt);
+-        bot.chat(response);
++
++        performGPTCommand(bot, gptPrompt, commandId).then(response => {
++            if (bot.currentCommandId === commandId) {
++                bot.chat(response);
++            }
++        }).catch(err => console.error(err));
+     }
+ }
+
+diff --git a/src/skills.js b/src/skills.js
+index 3d0d4d9..1d33783 100644
+--- a/src/skills.js
++++ b/src/skills.js
+@@ -15,6 +15,12 @@ const { craftItem } = require('./skills/craftItem.js');
+ const { equipItem } = require('./skills/equipItem.js');
+ const { mineBlock } = require('./skills/mineBlock.js');
+ const { giveItem } = require('./skills/giveItem.js');
++const { move } = require('./skills/move.js');
++const { lookAt } = require('./skills/lookAt.js');
++const { fight } = require('./skills/fight.js');
++const { eat } = require('./skills/eat.js');
++const { status } = require('./skills/status.js');
++const { locateBlock } = require('./skills/locateBlock.js');
+
+ const skillFunctions = {
+     come,
+@@ -32,6 +38,12 @@ const skillFunctions = {
+     equipItem,
+     mineBlock,
+     giveItem,
++    move,
++    lookAt,
++    fight,
++    eat,
++    status,
++    locateBlock
+ };
+
+ module.exports = {
+diff --git a/src/skills/eat.js b/src/skills/eat.js
+new file mode 100644
+index 0000000..8ff0d12
+--- /dev/null
++++ b/src/skills/eat.js
+@@ -0,0 +1,36 @@
++// src/skills/eat.js
++
++async function eat(bot, foodName = null) {
++    if (bot.food === 20) {
++        return { success: true, message: "I am already full (20/20 food)." };
++    }
++
++    let food;
++    if (foodName) {
++        food = bot.inventory.items().find(item => item.name.includes(foodName.toLowerCase()) && item.foodPoints > 0);
++        if (!food) {
++            return { success: false, message: `I don't have any ${foodName} to eat.` };
++        }
++    } else {
++        // Pick best food
++        const foods = bot.inventory.items().filter(item => item.foodPoints > 0);
++        if (foods.length === 0) {
++            return { success: false, message: "I have no food to eat." };
++        }
++        // Sort by food points descending
++        foods.sort((a, b) => b.foodPoints - a.foodPoints);
++        food = foods[0];
++    }
++
++    try {
++        console.log(`INFO: Eating ${food.name}`);
++        await bot.equip(food, 'hand');
++        await bot.consume();
++        return { success: true, message: `Ate ${food.name}. Food level: ${bot.food}` };
++    } catch (err) {
++        console.error("Eat error:", err);
++        return { success: false, error: `Failed to eat ${food.name}: ${err.message}` };
++    }
++}
++
++module.exports = { eat };
+diff --git a/src/skills/fight.js b/src/skills/fight.js
+new file mode 100644
+index 0000000..365cea4
+--- /dev/null
++++ b/src/skills/fight.js
+@@ -0,0 +1,126 @@
++// src/skills/fight.js
++const { goals: { GoalNear } } = require('mineflayer-pathfinder');
++
++async function fight(bot, mobType) {
++    const commandId = bot.currentCommandId;
++
++    if (!mobType) return { success: false, error: "No mob type specified." };
++
++    const targetName = mobType.toLowerCase();
++
++    // Check requirements & Equip
++    if (targetName === 'skeleton') {
++        const hasBow = bot.inventory.items().some(i => i.name === 'bow');
++        const hasArrows = bot.inventory.items().some(i => i.name.includes('arrow'));
++
++        if (!hasBow) return { success: false, message: "I have no bow." };
++        if (!hasArrows) return { success: false, message: "I have no arrows." };
++
++        try {
++            const bow = bot.inventory.items().find(i => i.name === 'bow');
++            await bot.equip(bow, 'hand');
++        } catch (err) {
++            return { success: false, error: "Failed to equip bow." };
++        }
++
++    } else if (targetName === 'zombie') {
++        const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
++        if (swords.length === 0) return { success: false, message: "I have no sword." };
++
++        // Sort swords: Netherite > Diamond > Iron > Stone > Golden > Wooden
++        const tierOrder = ['netherite', 'diamond', 'iron', 'stone', 'golden', 'wooden'];
++        swords.sort((a, b) => {
++            const aTier = tierOrder.findIndex(t => a.name.includes(t));
++            const bTier = tierOrder.findIndex(t => b.name.includes(t));
++            // Lower index is better. If not found (-1), put at end.
++            const aVal = aTier === -1 ? 99 : aTier;
++            const bVal = bTier === -1 ? 99 : bTier;
++            return aVal - bVal;
++        });
++
++        try {
++             await bot.equip(swords[0], 'hand');
++        } catch (err) {
++            return { success: false, error: "Failed to equip sword." };
++        }
++    } else {
++        // Generic fight - try to equip sword if available
++        const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
++        if (swords.length > 0) {
++            await bot.equip(swords[0], 'hand');
++        }
++    }
++
++    // Find target
++    // We look for nearest entity of that type
++    const target = bot.nearestEntity(entity =>
++        entity.name && entity.name.toLowerCase() === targetName &&
++        entity.position.distanceTo(bot.entity.position) < 32 &&
++        (entity.kind === 'HostileMobs' || entity.type === 'mob')
++    );
++
++    if (!target) return { success: true, message: `No ${mobType} found nearby.` };
++
++    // Combat Loop
++    try {
++        if (targetName === 'skeleton') {
++             // Ranged Combat
++             bot.pvp.stop(); // Ensure pvp plugin isn't interfering
++
++             console.log(`INFO: Fighting skeleton with bow.`);
++
++             while (target && target.isValid && target.health > 0) {
++                 if (commandId && bot.currentCommandId !== commandId) {
++                     return { success: false, message: "Interrupted" };
++                 }
++
++                 const dist = target.position.distanceTo(bot.entity.position);
++
++                 // Keep distance
++                 if (dist > 15) {
++                     // Move closer
++                     await bot.pathfinder.goto(new GoalNear(target.position.x, target.position.y, target.position.z, 14));
++                 } else if (dist < 5) {
++                     // Too close? Maybe back up? (Advanced)
++                 }
++
++                 // Look at target
++                 // Aiming compensation involves physics, simplified here to looking at eye height
++                 await bot.lookAt(target.position.offset(0, target.height * 0.8, 0));
++
++                 // Check if we still have arrows
++                 const hasArrows = bot.inventory.items().some(i => i.name.includes('arrow'));
++                 if (!hasArrows) return { success: false, message: "Ran out of arrows." };
++
++                 bot.activateItem(); // Draw bow
++                 await bot.waitForTicks(20); // Charge
++                 bot.deactivateItem(); // Shoot
++
++                 await bot.waitForTicks(10); // Delay
++             }
++
++             return { success: true, message: "Skeleton defeated." };
++
++        } else {
++             // Melee Combat (Zombie or others)
++             console.log(`INFO: Fighting ${targetName} with melee.`);
++             await bot.pvp.attack(target);
++
++             // Wait loop
++             while (target && target.isValid && target.health > 0) {
++                 if (commandId && bot.currentCommandId !== commandId) {
++                     bot.pvp.stop();
++                     return { success: false, message: "Interrupted" };
++                 }
++                 await new Promise(r => setTimeout(r, 500));
++             }
++             bot.pvp.stop();
++             return { success: true, message: `Defeated ${targetName}.` };
++        }
++    } catch (err) {
++        bot.pvp.stop();
++        return { success: false, error: err.message };
++    }
++}
++
++module.exports = { fight };
+diff --git a/src/skills/harvestTree.js b/src/skills/harvestTree.js
+index 81063ef..ec3a7f4 100644
+--- a/src/skills/harvestTree.js
++++ b/src/skills/harvestTree.js
+@@ -9,21 +9,31 @@ const Vec3 = require('vec3');
+
+ const LOG_BLOCKS = ['oak_log', 'spruce_log', 'birch_log', 'jungle_log', 'acacia_log', 'dark_oak_log'];
+
+-async function harvestTree(bot) {
++async function harvestTree(bot, direction = null) {
++    const commandId = bot.currentCommandId;
+
+     // Find the closest tree
+-    const treeBase = await findClosestTree(bot);
++    const treeBase = await findClosestTree(bot, direction);
+     if (!treeBase) {
+         console.log("INFO: No tree found within range.");
+         return { success: true };
+     }
+
++    // Check interruption
++    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
++
+     // Go to the tree
+     await goNear(bot, treeBase);
+
++    // Check interruption
++    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
++
+     // Harvest the tree
+     const droppedItems = [];
+-    await harvestAdjacentTreeBlocks(bot, droppedItems, treeBase);
++    await harvestAdjacentTreeBlocks(bot, droppedItems, treeBase, new Set(), commandId);
++
++    // Check interruption
++    if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
+
+     // Wait for last item to fall to the ground.
+     await sleep(1000);
+@@ -32,6 +42,7 @@ async function harvestTree(bot) {
+     console.log("INFO: Collecting items")
+     try {
+         for (const item of droppedItems) {
++            if (commandId && bot.currentCommandId !== commandId) break;
+             await goTo(bot, item.position);
+         }
+     } catch (error) {
+@@ -41,12 +52,52 @@ async function harvestTree(bot) {
+     return { success: true, inventory: queryInventory(bot) };
+ }
+
+-async function findClosestTree(bot) {
++async function findClosestTree(bot, direction = null) {
+     const treeBlocks = LOG_BLOCKS;
+     const maxDistance = 64; // Maximum search radius for trees
++
++    const matching = (block) => {
++        if (!treeBlocks.includes(block.name)) return false;
++        if (direction) {
++            // Check angle relative to bot
++            const dx = block.position.x - bot.entity.position.x;
++            const dz = block.position.z - bot.entity.position.z;
++
++            // Calculate angle to block. Matches bot.entity.yaw: 0=South(+Z), PI/2=West(-X)
++            // atan2(-dx, dz) produces this mapping
++            const angleToBlock = Math.atan2(-dx, dz);
++
++            // Normalize bot yaw to -PI to PI
++            let botYaw = bot.entity.yaw % (2 * Math.PI);
++            if (botYaw > Math.PI) botYaw -= 2 * Math.PI;
++            if (botYaw < -Math.PI) botYaw += 2 * Math.PI;
++
++            // Determine target angle based on direction
++            let targetAngleOffset = 0;
++            switch (direction.toLowerCase()) {
++                case 'front': case 'forward': targetAngleOffset = 0; break;
++                case 'back': case 'backward': targetAngleOffset = Math.PI; break;
++                case 'left': targetAngleOffset = -Math.PI / 2; break; // East from South
++                case 'right': targetAngleOffset = Math.PI / 2; break; // West from South
++            }
++
++            let targetAngle = botYaw + targetAngleOffset;
++            if (targetAngle > Math.PI) targetAngle -= 2 * Math.PI;
++            if (targetAngle < -Math.PI) targetAngle += 2 * Math.PI;
++
++            // Difference
++            let diff = Math.abs(angleToBlock - targetAngle);
++            if (diff > Math.PI) diff = 2 * Math.PI - diff;
++
++            // Allow cone of 45 degrees (PI/4)
++            return diff < Math.PI / 4;
++        }
++        return true;
++    };
++
+     const block = bot.findBlock({
+         point: bot.entity.position,
+-        matching: block => treeBlocks.includes(block.name),
++        matching: matching,
+         maxDistance: maxDistance,
+         minCount: 1,
+     });
+@@ -60,7 +111,8 @@ async function findClosestTree(bot) {
+     }
+ }
+
+-async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = new Set()) {
++async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited = new Set(), commandId = null) {
++    if (commandId && bot.currentCommandId !== commandId) return;
+
+     const directions = [];
+     for (let dx = -1; dx <= 1; dx++) {
+@@ -72,6 +124,8 @@ async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited =
+     }
+
+     for (const direction of directions) {
++        if (commandId && bot.currentCommandId !== commandId) return;
++
+         const newPos = position.clone().add(direction);
+         const key = newPos.toString();
+
+@@ -96,7 +150,7 @@ async function harvestAdjacentTreeBlocks(bot, droppedItems, position, visited =
+                 bot.removeListener('itemDrop', itemDropCallback)
+
+                 // Continue harvesting
+-                await harvestAdjacentTreeBlocks(bot, droppedItems, newPos, visited);
++                await harvestAdjacentTreeBlocks(bot, droppedItems, newPos, visited, commandId);
+             }
+         }
+     }
+diff --git a/src/skills/locateBlock.js b/src/skills/locateBlock.js
+new file mode 100644
+index 0000000..18f4c7f
+--- /dev/null
++++ b/src/skills/locateBlock.js
+@@ -0,0 +1,37 @@
++// src/skills/locateBlock.js
++const Vec3 = require('vec3');
++
++async function locateBlock(bot, blockName, count = 1) {
++    const mcData = require('minecraft-data')(bot.version);
++
++    let targetName = blockName.toLowerCase();
++    if (targetName.includes(' ')) targetName = targetName.replace(/ /g, '_');
++
++    // Simple alias handling
++    if (targetName === 'diamond') targetName = 'diamond_ore';
++    if (targetName === 'iron') targetName = 'iron_ore';
++    if (targetName === 'gold') targetName = 'gold_ore';
++    if (targetName === 'coal') targetName = 'coal_ore';
++
++    const blockType = mcData.blocksByName[targetName];
++    if (!blockType) return { success: false, error: `Unknown block: ${blockName}` };
++
++    // Limit count
++    const safeCount = Math.min(count, 5);
++
++    const blocks = bot.findBlocks({
++        matching: blockType.id,
++        maxDistance: 64,
++        count: safeCount
++    });
++
++    if (blocks.length === 0) {
++        return { success: true, message: `No ${blockName} found nearby.` };
++    }
++
++    // Format response
++    const locations = blocks.map(pos => `(${pos.x}, ${pos.y}, ${pos.z})`).join(", ");
++    return { success: true, message: `Found ${blocks.length} ${blockName} at: ${locations}` };
++}
++
++module.exports = { locateBlock };
+diff --git a/src/skills/lookAt.js b/src/skills/lookAt.js
+new file mode 100644
+index 0000000..95d8edb
+--- /dev/null
++++ b/src/skills/lookAt.js
+@@ -0,0 +1,20 @@
++// src/skills/lookAt.js
++
++async function lookAt(bot, username) {
++    const player = bot.players[username];
++
++    if (!player || !player.entity) {
++        return { success: false, error: `Player ${username} not found or not visible.` };
++    }
++
++    try {
++        // Look at the player's eyes (offset y by height)
++        const targetPos = player.entity.position.offset(0, player.entity.height, 0);
++        await bot.lookAt(targetPos);
++        return { success: true, message: `Looking at ${username}.` };
++    } catch (err) {
++        return { success: false, error: err.message };
++    }
++}
++
++module.exports = { lookAt };
+diff --git a/src/skills/mineBlock.js b/src/skills/mineBlock.js
+index 175c3a9..7f84115 100644
+--- a/src/skills/mineBlock.js
++++ b/src/skills/mineBlock.js
+@@ -4,26 +4,20 @@ const { goNear } = require('./goNear');
+ const { digBlock } = require('./digBlock');
+ const Vec3 = require('vec3');
+
+-async function mineBlock(bot, blockName, count = 1) {
++async function mineBlock(bot, blockName, count = 1, direction = null) {
++    const commandId = bot.currentCommandId;
+     const mcData = require('minecraft-data')(bot.version);
+     let minedCount = 0;
+
+     // Resolve block ID
+-    // Handle "cobblestone" special case: In the world, it is "stone" (or deepslate, etc.)
+-    // But if the user specifically asks for "cobblestone", they usually mean "mine stone to get cobblestone".
+-    // However, if they ask for "stone", they might mean "stone".
+-    // Let's check if the block exists.
+     let targetBlockName = blockName;
+
+     // Handle common aliases
+-    // First, normalize spaces to underscores (e.g. "sugar cane" -> "sugar_cane")
+     if (targetBlockName.includes(' ')) {
+         targetBlockName = targetBlockName.replace(/ /g, '_');
+     }
+
+     if (blockName === 'cobblestone') {
+-        // Check if there is actual cobblestone nearby (placed by player/dungeon)
+-        // If not, assume they mean stone.
+         const cobbleId = mcData.blocksByName['cobblestone'].id;
+         const hasCobble = bot.findBlock({ matching: cobbleId, maxDistance: 32 });
+         if (!hasCobble) {
+@@ -42,14 +36,41 @@ async function mineBlock(bot, blockName, count = 1) {
+     }
+
+     for (let i = 0; i < count; i++) {
++        if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
++
+         // Find the nearest block of this type
+         const block = bot.findBlock({
+             matching: (blk) => {
+                 if (blk.type !== blockType.id) return false;
+-                // If mining stone/deepslate, ensure it is exposed to air/water so we don't xray into walls
+-                // For ores, we might want to dig in, but for stone, surface is better.
+-                // Actually, let's just find any for now, but maybe prioritize visible ones?
+-                // bot.findBlock defaults to nearest, which is usually visible.
++
++                if (direction) {
++                     // Check angle relative to bot
++                    const dx = blk.position.x - bot.entity.position.x;
++                    const dz = blk.position.z - bot.entity.position.z;
++                    const angleToBlock = Math.atan2(-dx, dz);
++
++                    let botYaw = bot.entity.yaw % (2 * Math.PI);
++                    if (botYaw > Math.PI) botYaw -= 2 * Math.PI;
++                    if (botYaw < -Math.PI) botYaw += 2 * Math.PI;
++
++                    let targetAngleOffset = 0;
++                    switch (direction.toLowerCase()) {
++                        case 'front': case 'forward': targetAngleOffset = 0; break;
++                        case 'back': case 'backward': targetAngleOffset = Math.PI; break;
++                        case 'left': targetAngleOffset = -Math.PI / 2; break;
++                        case 'right': targetAngleOffset = Math.PI / 2; break;
++                    }
++
++                    let targetAngle = botYaw + targetAngleOffset;
++                    if (targetAngle > Math.PI) targetAngle -= 2 * Math.PI;
++                    if (targetAngle < -Math.PI) targetAngle += 2 * Math.PI;
++
++                    let diff = Math.abs(angleToBlock - targetAngle);
++                    if (diff > Math.PI) diff = 2 * Math.PI - diff;
++
++                    return diff < Math.PI / 4;
++                }
++
+                 return true;
+             },
+             maxDistance: 32,
+@@ -67,7 +88,7 @@ async function mineBlock(bot, blockName, count = 1) {
+
+         // Go to the block
+         // For cactus, stay further away to avoid pricking
+-        const approachRange = (targetBlockName === 'cactus') ? 4 : 3;
++        const approachRange = (targetBlockName === 'cactus') ? 3.5 : 3;
+         const moveResult = await goNear(bot, block.position, approachRange);
+
+         if (!moveResult.success) {
+@@ -75,6 +96,8 @@ async function mineBlock(bot, blockName, count = 1) {
+             continue;
+         }
+
++        if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
++
+         // Equip appropriate tool (Pickaxe for ores)
+         // We look for any pickaxe in inventory
+         const pickaxes = bot.inventory.items().filter(item => item.name.includes('pickaxe'));
+@@ -106,10 +129,12 @@ async function mineBlock(bot, blockName, count = 1) {
+             // Walk to the block position to collect drops
+             // We wait a split second for the block to break and drop
+             await new Promise(r => setTimeout(r, 500));
++
++            if (commandId && bot.currentCommandId !== commandId) return { success: false, message: "Interrupted" };
+
+             // For cactus, don't walk directly into the spot (range 1) as items might be near other cactus
+-            // Range 2 should be close enough to pick up items (pickup radius is ~2 blocks)
+-            const collectRange = (targetBlockName === 'cactus') ? 2 : 1;
++            // Range 2.5 should be safe and close enough to pick up items
++            const collectRange = (targetBlockName === 'cactus') ? 2.5 : 1;
+             await goNear(bot, block.position, collectRange);
+         } catch (err) {
+             console.error(`ERROR: Failed to mine block at ${block.position}:`, err);
+diff --git a/src/skills/move.js b/src/skills/move.js
+new file mode 100644
+index 0000000..84336f2
+--- /dev/null
++++ b/src/skills/move.js
+@@ -0,0 +1,42 @@
++// src/skills/move.js
++
++const { goals: { GoalNear } } = require('mineflayer-pathfinder');
++
++async function move(bot, direction, distance = 1) {
++    const yaw = bot.entity.yaw;
++    let angle = 0;
++
++    // Normalizing direction
++    const dir = direction.toLowerCase();
++
++    if (dir === 'forward' || dir === 'front') {
++        angle = 0;
++    } else if (dir === 'back' || dir === 'backward' || dir === 'backwards') {
++        angle = Math.PI;
++    } else if (dir === 'left') {
++        angle = -Math.PI / 2;
++    } else if (dir === 'right') {
++        angle = Math.PI / 2;
++    } else {
++        return { success: false, error: "Unknown direction. Use forward, back, left, or right." };
++    }
++
++    const targetYaw = yaw + angle;
++
++    // Calculate delta
++    // x = -sin(yaw) * d
++    // z = cos(yaw) * d
++    const dx = -Math.sin(targetYaw) * distance;
++    const dz = Math.cos(targetYaw) * distance;
++
++    const targetPos = bot.entity.position.offset(dx, 0, dz);
++
++    try {
++        await bot.pathfinder.goto(new GoalNear(targetPos.x, targetPos.y, targetPos.z, 0.5));
++        return { success: true, message: `Moved ${direction} ${distance} blocks.` };
++    } catch (err) {
++        return { success: false, error: err.message };
++    }
++}
++
++module.exports = { move };
+diff --git a/src/skills/status.js b/src/skills/status.js
+new file mode 100644
+index 0000000..8349487
+--- /dev/null
++++ b/src/skills/status.js
+@@ -0,0 +1,14 @@
++// src/skills/status.js
++
++async function status(bot) {
++    const h = bot.health ? bot.health.toFixed(1) : '?';
++    const f = bot.food ? bot.food.toFixed(1) : '?';
++    const s = bot.foodSaturation ? bot.foodSaturation.toFixed(1) : '?';
++
++    return {
++        success: true,
++        message: `Health: ${h}/20, Food: ${f}/20, Saturation: ${s}`
++    };
++}
++
++module.exports = { status };
+--
+2.51.2

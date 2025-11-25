@@ -9,6 +9,12 @@ Key features:
 - **Skill-based actions**: Modular functions for tasks like movement, harvesting, and exploration.
 - **GPT integration**: Use AI for interpreting and executing complex commands.
 - **Safety mechanisms**: Bots are designed to avoid hazards and survive longer.
+- **New Skills**:
+  - `fight`: Combat with skeletons/zombies.
+  - `eat`: Survival.
+  - `move`, `lookAt`: Basic movement.
+  - `status`: Check health/food.
+  - `locateBlock`: Find blocks.
 
 ## How It Works
 
