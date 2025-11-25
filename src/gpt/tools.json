@@ -294,6 +294,35 @@
                     "required": ["username"]
                 }
             }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "fight",
+                "description": "Fight a specific enemy/mob. Requires appropriate weapons (bow for skeleton, sword for zombie).",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "mobType": {
+                            "type": "string",
+                            "description": "The type of mob to fight (e.g. skeleton, zombie)."
+                        }
+                    },
+                    "required": ["mobType"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "eat",
+                "description": "Eat food from inventory if hungry.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
         }
     ]
 }

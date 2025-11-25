@@ -157,7 +157,9 @@ async function performGPTCommand(bot, command, commandId = null) {
                             "mineBlock": ["blockName", "count", "direction"],
                             "giveItem": ["itemName", "count", "playerName"],
                             "move": ["direction", "distance"],
-                            "lookAt": ["username"]
+                            "lookAt": ["username"],
+                            "fight": ["mobType"],
+                            "eat": []
                         };
 
                         let funcArgs = [];

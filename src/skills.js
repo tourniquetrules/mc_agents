@@ -17,6 +17,8 @@ const { mineBlock } = require('./skills/mineBlock.js');
 const { giveItem } = require('./skills/giveItem.js');
 const { move } = require('./skills/move.js');
 const { lookAt } = require('./skills/lookAt.js');
+const { fight } = require('./skills/fight.js');
+const { eat } = require('./skills/eat.js');
 
 const skillFunctions = {
     come,
@@ -35,7 +37,9 @@ const skillFunctions = {
     mineBlock,
     giveItem,
     move,
-    lookAt
+    lookAt,
+    fight,
+    eat
 };
 
 module.exports = {
