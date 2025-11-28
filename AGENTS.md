@@ -15,6 +15,14 @@ Key features:
   - `move`, `lookAt`: Basic movement.
   - `status`: Check health/food.
   - `locateBlock`: Find blocks.
+  - `farm`, `patrol`, `smelt`, `build`, `sleep`, `tossItem`, `equipArmor`.
+
+## Skills Usage Guide
+
+- **Farming**: Use the command "farm" to start a loop where the bot searches for mature crops (wheat, carrots, potatoes, beetroots) within 20 blocks. It will harvest them and replant if it has seeds. It also plants seeds on empty farmland.
+- **Patrolling**: Use "patrol" (optionally specify distance, e.g., "patrol 30") to have the bot wander around its current location, engaging any hostile mobs it encounters.
+- **Smelting**: Command "smelt <item> <fuel>" (e.g., "smelt raw_iron coal") to find a furnace and cook items.
+- **Building**: Command "build pillar" or "build wall" to create simple structures using blocks in inventory.
 
 ## How It Works
 

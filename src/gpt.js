@@ -162,7 +162,14 @@ async function performGPTCommand(bot, command, commandId = null) {
                             "eat": ["foodName"],
                             "status": [],
                             "locateBlock": ["blockName", "count"],
-                            "guard": []
+                            "guard": [],
+                            "farm": [],
+                            "patrol": ["distance"],
+                            "smelt": ["itemName", "fuelName"],
+                            "equipArmor": [],
+                            "goToSleep": [],
+                            "build": ["structureName"],
+                            "tossItem": ["itemName"]
                         };
 
                         let funcArgs = [];

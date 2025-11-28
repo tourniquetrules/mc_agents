@@ -22,6 +22,13 @@ const { eat } = require('./skills/eat.js');
 const { status } = require('./skills/status.js');
 const { locateBlock } = require('./skills/locateBlock.js');
 const { guard } = require('./skills/guard.js');
+const { farm } = require('./skills/farm.js');
+const { patrol } = require('./skills/patrol.js');
+const { smelt } = require('./skills/smelt.js');
+const { equipArmor } = require('./skills/equipArmor.js');
+const { goToSleep } = require('./skills/sleep.js');
+const { build } = require('./skills/build.js');
+const { tossItem } = require('./skills/toss.js');
 
 const skillFunctions = {
     come,
@@ -45,7 +52,14 @@ const skillFunctions = {
     eat,
     status,
     locateBlock,
-    guard
+    guard,
+    farm,
+    patrol,
+    smelt,
+    equipArmor,
+    goToSleep,
+    build,
+    tossItem
 };
 
 module.exports = {
