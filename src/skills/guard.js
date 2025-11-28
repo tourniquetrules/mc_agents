@@ -2,6 +2,15 @@
 const { fight } = require('./fight.js');
 const { sleep } = require('../utils.js');
 
+const HOSTILE_MOBS = [
+    'zombie', 'skeleton', 'spider', 'cave_spider', 'creeper',
+    'enderman', 'witch', 'phantom', 'drowned', 'husk', 'stray',
+    'piglin', 'hoglin', 'zombified_piglin', 'blaze', 'ghast',
+    'wither_skeleton', 'pillager', 'ravager', 'vex', 'vindicator',
+    'evoker', 'guardian', 'elder_guardian', 'shulker', 'slime',
+    'magma_cube', 'silverfish', 'endermite'
+];
+
 async function guard(bot) {
     const commandId = bot.currentCommandId;
     bot.chat("Guard mode enabled. I will protect this area.");
@@ -13,7 +22,7 @@ async function guard(bot) {
         if (bot.health < lastHealth) {
              // We took damage. Find nearest threat.
              const threat = bot.nearestEntity(e =>
-                 (e.kind === 'HostileMobs' || e.type === 'mob') &&
+                 e.name && HOSTILE_MOBS.includes(e.name.toLowerCase()) &&
                  e.position.distanceTo(bot.entity.position) < 20 &&
                  e !== bot.entity
              );
@@ -34,16 +43,14 @@ async function guard(bot) {
             if (!target) {
                 // Scan for mobs within 6 blocks
                 target = bot.nearestEntity(entity =>
-                    (entity.kind === 'HostileMobs' || entity.type === 'mob') &&
+                    entity.name && HOSTILE_MOBS.includes(entity.name.toLowerCase()) &&
                     entity.position.distanceTo(bot.entity.position) <= 6 &&
-                    entity.name !== 'Armor Stand' &&
                     entity !== bot.entity
                 );
             }
 
             if (target) {
                 forceTarget = null; // Clear force target
-                // fight handles interruption check internally too
                 await fight(bot, target);
             }
 
@@ -53,7 +60,10 @@ async function guard(bot) {
         console.error("Guard error:", err);
     } finally {
         bot.removeListener('health', onHealth);
-        if (bot.currentCommandId !== commandId) {
+        // Only chat stopped if we weren't interrupted by another command (which handles its own chat)
+        // But here we are checking if currentCommandId matched at start.
+        // If it DOESN'T match, we were interrupted.
+        if (bot.currentCommandId === commandId) {
              bot.chat("Guard mode stopped.");
         }
     }

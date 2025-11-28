@@ -20,6 +20,7 @@ async function follow(bot, playerName) {
 
 async function followLoop(bot, targetName, commandId) {
     let lastPosition = null;
+    let lastVelocity = null;
     let state = 'init';
 
     while (bot.currentCommandId === commandId) {
@@ -27,6 +28,7 @@ async function followLoop(bot, targetName, commandId) {
 
         if (player) {
             lastPosition = player.position.clone();
+            lastVelocity = player.velocity.clone();
 
             // If we were not following (init, searching, or lost), resume following
             if (state !== 'following') {
@@ -37,26 +39,53 @@ async function followLoop(bot, targetName, commandId) {
         } else {
             // Player lost
             if (state === 'following') {
-                console.log(`INFO: Lost sight of ${targetName}.`);
+                console.log(`INFO: Lost sight of ${targetName}. Attempting to predict path.`);
                 state = 'searching';
 
-                if (lastPosition) {
-                    // Go to last known position
-                    bot.pathfinder.setGoal(new GoalNear(lastPosition.x, lastPosition.y, lastPosition.z, 2));
+                let targetPos = lastPosition;
+
+                // Try to predict where they went based on velocity
+                if (lastVelocity) {
+                    // Velocity is per tick. Project 2 seconds (40 ticks)?
+                    // But velocity decays.
+                    // Simple projection: 3 blocks in that direction.
+                    const speed = Math.sqrt(lastVelocity.x**2 + lastVelocity.z**2);
+                    if (speed > 0.05) { // If moving
+                         const lookAhead = lastVelocity.clone().normalize().scaled(4); // 4 blocks ahead
+                         targetPos = lastPosition.clone().add(lookAhead);
+                         console.log(`INFO: Predicting target at ${targetPos}`);
+                    }
+                }
+
+                if (targetPos) {
+                    bot.pathfinder.setGoal(new GoalNear(targetPos.x, targetPos.y, targetPos.z, 2));
                 } else {
                     state = 'lost';
                 }
             } else if (state === 'searching') {
-                // Check if we arrived at last known position
-                if (lastPosition && bot.entity.position.distanceTo(lastPosition) < 3) {
-                    console.log(`INFO: Arrived at last known position.`);
-                    bot.chat(`I lost you, ${targetName}.`);
-                    state = 'lost';
+                // Check if we reached the search target
+                // GoalNear(2) means within 2 blocks.
+                // bot.pathfinder.isMoving() returns true if still going.
+
+                if (!bot.pathfinder.isMoving()) {
+                    // We stopped moving (reached goal or stuck)
+
+                    // Look around
+                    const currentYaw = bot.entity.yaw;
+                    await bot.look(currentYaw + Math.PI / 2, 0);
+                    await sleep(500);
+                    await bot.look(currentYaw - Math.PI / 2, 0);
+
+                    if (!bot.players[targetName]?.entity) {
+                         console.log(`INFO: Still can't see ${targetName}.`);
+                         bot.chat(`I lost you, ${targetName}.`);
+                         state = 'lost';
+                    }
                 }
             }
         }
 
-        await sleep(1000);
+        await sleep(250); // Check 4 times a second
     }
     
     // Cleanup if interrupted

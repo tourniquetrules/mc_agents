@@ -1,5 +1,6 @@
 // src/skills/fight.js
 const { goals: { GoalNear } } = require('mineflayer-pathfinder');
+const { sleep } = require('../utils.js');
 
 async function fight(bot, targetOrName) {
     const commandId = bot.currentCommandId;
@@ -122,7 +123,7 @@ async function fight(bot, targetOrName) {
                      bot.pvp.stop();
                      return { success: false, message: "Interrupted" };
                  }
-                 await new Promise(r => setTimeout(r, 500));
+                 await sleep(500);
              }
              bot.pvp.stop();
              return { success: true, message: `Defeated ${targetName}.` };
