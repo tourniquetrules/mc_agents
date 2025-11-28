@@ -361,6 +361,18 @@
                     "required": ["blockName"]
                 }
             }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "guard",
+                "description": "Enter guard mode. Attacks any hostile mob within 6 blocks and retaliates if attacked.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
         }
     ]
 }

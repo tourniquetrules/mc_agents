@@ -161,7 +161,8 @@ async function performGPTCommand(bot, command, commandId = null) {
                             "fight": ["mobType"],
                             "eat": ["foodName"],
                             "status": [],
-                            "locateBlock": ["blockName", "count"]
+                            "locateBlock": ["blockName", "count"],
+                            "guard": []
                         };
 
                         let funcArgs = [];

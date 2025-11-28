@@ -1,69 +1,73 @@
 // src/skills/fight.js
 const { goals: { GoalNear } } = require('mineflayer-pathfinder');
 
-async function fight(bot, mobType) {
+async function fight(bot, targetOrName) {
     const commandId = bot.currentCommandId;
 
-    if (!mobType) return { success: false, error: "No mob type specified." };
+    let target = null;
+    let targetName = "";
 
-    const targetName = mobType.toLowerCase();
+    if (typeof targetOrName === 'string') {
+        targetName = targetOrName.toLowerCase();
+        // Find target
+        target = bot.nearestEntity(entity =>
+            entity.name && entity.name.toLowerCase() === targetName &&
+            entity.position.distanceTo(bot.entity.position) < 32 &&
+            (entity.kind === 'HostileMobs' || entity.type === 'mob')
+        );
+        if (!target) return { success: true, message: `No ${targetName} found nearby.` };
+    } else if (typeof targetOrName === 'object' && targetOrName !== null) {
+        target = targetOrName;
+        targetName = (target.name || "enemy").toLowerCase();
+    } else {
+        return { success: false, error: "Invalid target." };
+    }
 
-    // Check requirements & Equip
+    // Equip logic based on targetName
     if (targetName === 'skeleton') {
         const hasBow = bot.inventory.items().some(i => i.name === 'bow');
         const hasArrows = bot.inventory.items().some(i => i.name.includes('arrow'));
 
-        if (!hasBow) return { success: false, message: "I have no bow." };
-        if (!hasArrows) return { success: false, message: "I have no arrows." };
-
-        try {
-            const bow = bot.inventory.items().find(i => i.name === 'bow');
-            await bot.equip(bow, 'hand');
-        } catch (err) {
-            return { success: false, error: "Failed to equip bow." };
+        if (hasBow && hasArrows) {
+             try {
+                const bow = bot.inventory.items().find(i => i.name === 'bow');
+                await bot.equip(bow, 'hand');
+            } catch (err) {
+                console.log("Failed to equip bow", err);
+            }
+        } else {
+            console.log("No bow/arrows, trying melee.");
+            const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
+            if (swords.length > 0) await bot.equip(swords[0], 'hand');
         }
 
-    } else if (targetName === 'zombie') {
+    } else {
+        // Zombie or others - melee
         const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
-        if (swords.length === 0) return { success: false, message: "I have no sword." };
-
-        // Sort swords: Netherite > Diamond > Iron > Stone > Golden > Wooden
+        // Sort swords
         const tierOrder = ['netherite', 'diamond', 'iron', 'stone', 'golden', 'wooden'];
         swords.sort((a, b) => {
             const aTier = tierOrder.findIndex(t => a.name.includes(t));
             const bTier = tierOrder.findIndex(t => b.name.includes(t));
-            // Lower index is better. If not found (-1), put at end.
             const aVal = aTier === -1 ? 99 : aTier;
             const bVal = bTier === -1 ? 99 : bTier;
             return aVal - bVal;
         });
 
-        try {
-             await bot.equip(swords[0], 'hand');
-        } catch (err) {
-            return { success: false, error: "Failed to equip sword." };
-        }
-    } else {
-        // Generic fight - try to equip sword if available
-        const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
         if (swords.length > 0) {
-            await bot.equip(swords[0], 'hand');
+             try {
+                 await bot.equip(swords[0], 'hand');
+             } catch (err) {
+                 console.log("Failed to equip sword", err);
+             }
         }
     }
 
-    // Find target
-    // We look for nearest entity of that type
-    const target = bot.nearestEntity(entity =>
-        entity.name && entity.name.toLowerCase() === targetName &&
-        entity.position.distanceTo(bot.entity.position) < 32 &&
-        (entity.kind === 'HostileMobs' || entity.type === 'mob')
-    );
-
-    if (!target) return { success: true, message: `No ${mobType} found nearby.` };
-
     // Combat Loop
     try {
-        if (targetName === 'skeleton') {
+        const holdingBow = bot.heldItem && bot.heldItem.name === 'bow';
+
+        if (targetName === 'skeleton' && holdingBow) {
              // Ranged Combat
              bot.pvp.stop(); // Ensure pvp plugin isn't interfering
 
@@ -81,28 +85,34 @@ async function fight(bot, mobType) {
                      // Move closer
                      await bot.pathfinder.goto(new GoalNear(target.position.x, target.position.y, target.position.z, 14));
                  } else if (dist < 5) {
-                     // Too close? Maybe back up? (Advanced)
+                     // Too close?
                  }
 
                  // Look at target
-                 // Aiming compensation involves physics, simplified here to looking at eye height
                  await bot.lookAt(target.position.offset(0, target.height * 0.8, 0));
 
-                 // Check if we still have arrows
+                 // Check arrows
                  const hasArrows = bot.inventory.items().some(i => i.name.includes('arrow'));
-                 if (!hasArrows) return { success: false, message: "Ran out of arrows." };
+                 if (!hasArrows) {
+                     console.log("Out of arrows, switching to melee");
+                     break; // Fall out to melee or return?
+                     // Return for now as we might not have sword equipped logic here dynamic
+                 }
 
-                 bot.activateItem(); // Draw bow
-                 await bot.waitForTicks(20); // Charge
-                 bot.deactivateItem(); // Shoot
+                 bot.activateItem();
+                 await bot.waitForTicks(20);
+                 bot.deactivateItem();
 
-                 await bot.waitForTicks(10); // Delay
+                 await bot.waitForTicks(10);
              }
 
-             return { success: true, message: "Skeleton defeated." };
+             if (!target.isValid || target.health <= 0)
+                return { success: true, message: "Skeleton defeated." };
 
-        } else {
-             // Melee Combat (Zombie or others)
+        }
+
+        // Melee Combat (Fallthrough or default)
+        {
              console.log(`INFO: Fighting ${targetName} with melee.`);
              await bot.pvp.attack(target);
 
