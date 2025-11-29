@@ -294,6 +294,193 @@
                     "required": ["username"]
                 }
             }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "fight",
+                "description": "Fight a specific enemy/mob. Requires appropriate weapons (bow for skeleton, sword for zombie).",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "mobType": {
+                            "type": "string",
+                            "description": "The type of mob to fight (e.g. skeleton, zombie)."
+                        }
+                    },
+                    "required": ["mobType"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "eat",
+                "description": "Eat food from inventory. If no name specified, eats best food.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "foodName": {
+                            "type": "string",
+                            "description": "Optional name of food to eat (e.g. bread, apple)."
+                        }
+                    },
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "status",
+                "description": "Check health and food status.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "locateBlock",
+                "description": "Locate specific blocks nearby and return their coordinates.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "blockName": {
+                            "type": "string",
+                            "description": "The name of the block to locate (e.g. diamond_ore)."
+                        },
+                        "count": {
+                            "type": "number",
+                            "description": "How many to find (default 1)."
+                        }
+                    },
+                    "required": ["blockName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "guard",
+                "description": "Enter guard mode. Attacks any hostile mob within 6 blocks and retaliates if attacked.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "farm",
+                "description": "Start farming loop: harvest mature crops and replant seeds nearby.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "patrol",
+                "description": "Patrol the nearby area by walking between random points and engaging enemies.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "distance": {
+                            "type": "number",
+                            "description": "Patrol radius (default 20)."
+                        }
+                    },
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "smelt",
+                "description": "Smelt items in a nearby furnace.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "Item to smelt (e.g. raw_iron)."
+                        },
+                        "fuelName": {
+                            "type": "string",
+                            "description": "Fuel to use (e.g. coal)."
+                        }
+                    },
+                    "required": ["itemName", "fuelName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "equipArmor",
+                "description": "Automatically find and equip the best armor from inventory.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "goToSleep",
+                "description": "Find a nearby bed and sleep.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {},
+                    "required": []
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "build",
+                "description": "Build a simple structure.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "structureName": {
+                            "type": "string",
+                            "description": "Structure to build: 'pillar', 'wall'."
+                        }
+                    },
+                    "required": ["structureName"]
+                }
+            }
+        },
+        {
+            "type": "function",
+            "function": {
+                "name": "tossItem",
+                "description": "Toss specific items to the player.",
+                "parameters": {
+                    "type": "object",
+                    "properties": {
+                        "itemName": {
+                            "type": "string",
+                            "description": "Name of item to toss."
+                        }
+                    },
+                    "required": ["itemName"]
+                }
+            }
         }
     ]
 }

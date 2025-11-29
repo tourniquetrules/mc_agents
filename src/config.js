@@ -8,7 +8,7 @@ const API_BASE_URL = "http://192.168.2.64:1234/v1";
 const PLAYER_NAME = "TourniquetRules";
 
 const BOT_CONFIG = {
-    username: "colin",
+    username: "Luddite",
     host: MINECRAFT_HOST,
     port: MINECRAFT_PORT,
     version: "1.21.8",
