@@ -23,7 +23,6 @@ async function farm(bot) {
             matching: (block) => {
                 if (!CROP_TYPES.includes(block.name)) return false;
 
-                // Check age
                 const props = block.properties || block._properties || {};
                 const age = parseInt(props.age || block.metadata);
 
@@ -41,18 +40,12 @@ async function farm(bot) {
             const block = bot.blockAt(pos);
             if (!block) continue;
 
-            // Go to crop
             await bot.pathfinder.goto(new GoalNear(pos.x, pos.y, pos.z, 2));
 
-            // Harvest
             try {
                 await bot.dig(block);
                 didWork = true;
-
-                // Collect drops (pickup range ~2, but ensuring close)
-                // We are already at dist 2 via goto.
-                // Maybe wait a tick for drops?
-                await sleep(500);
+                await sleep(500); // Wait for drops
 
                 // Replant
                 const seedName = SEEDS[block.name];
@@ -79,8 +72,24 @@ async function farm(bot) {
                 return above && above.name === 'air';
             },
             maxDistance: 20,
-            count: 3
+            count: 5
         });
+
+        if (emptyFarmland.length > 0) {
+             const availableSeeds = Object.values(SEEDS).filter(s => bot.inventory.items().some(i => i.name === s));
+             if (availableSeeds.length === 0) {
+                 console.log("No seeds found. Looking for drops...");
+                 const drop = bot.nearestEntity(e => (e.name === 'item' || e.type === 'object') && e.position.distanceTo(bot.entity.position) < 15);
+                 if (drop) {
+                     await bot.pathfinder.goto(new GoalNear(drop.position.x, drop.position.y, drop.position.z, 1));
+                     await sleep(1000);
+                 } else {
+                     await sleep(2000);
+                 }
+                 // Continue loop to re-check inventory
+                 continue;
+             }
+        }
 
         for (const pos of emptyFarmland) {
              if (bot.currentCommandId !== commandId) break;
@@ -88,7 +97,6 @@ async function farm(bot) {
              const availableSeeds = Object.values(SEEDS).filter(s => bot.inventory.items().some(i => i.name === s));
              if (availableSeeds.length === 0) break;
 
-             // Prefer seed type if we have it
              const seedName = availableSeeds[0];
              const seed = bot.inventory.items().find(i => i.name === seedName);
 
@@ -111,7 +119,6 @@ async function farm(bot) {
         }
     }
 
-    // Cleanup
     if (bot.currentCommandId !== commandId) {
         bot.pathfinder.setGoal(null);
     }

@@ -3,115 +3,11 @@
 const mineflayer = require('mineflayer');
 const { pathfinder, Movements } = require('mineflayer-pathfinder');
 const pvp = require('mineflayer-pvp').plugin;
-const express = require('express');
 const { BOT_CONFIG, START_POINT, PLAYER_NAME } = require('./config.js');
 const { skillFunctions } = require('./skills.js');
 const { createGPTAssistant, deleteGPTAssistant, performGPTCommand } = require('./gpt.js');
 
 const botRegistry = {};
-
-// HTTP API Server for external commands (e.g., Stream Deck)
-const HTTP_PORT = 3002;
-const app = express();
-app.use(express.json());
-
-// Get bot status (health, food, position)
-app.get('/status', (req, res) => {
-    const botName = req.query.bot || BOT_CONFIG.username;
-    const bot = botRegistry[botName];
-    if (!bot) {
-        return res.status(404).json({ success: false, error: `Bot ${botName} not found` });
-    }
-    res.json({
-        success: true,
-        bot: botName,
-        health: bot.health,
-        food: bot.food,
-        position: bot.entity?.position ? {
-            x: Math.round(bot.entity.position.x),
-            y: Math.round(bot.entity.position.y),
-            z: Math.round(bot.entity.position.z)
-        } : null,
-        isAlive: bot.health > 0
-    });
-});
-
-// Execute a skill command
-app.post('/command', async (req, res) => {
-    const { command, bot: botName, args } = req.body;
-    const targetBot = botRegistry[botName || BOT_CONFIG.username];
-    
-    if (!targetBot) {
-        return res.status(404).json({ success: false, error: `Bot ${botName || BOT_CONFIG.username} not found` });
-    }
-    
-    if (!command) {
-        return res.status(400).json({ success: false, error: 'No command specified' });
-    }
-
-    try {
-        // Check if it's a skill function
-        if (skillFunctions[command]) {
-            const result = await skillFunctions[command](targetBot, ...(args || []));
-            return res.json({ success: true, command, result });
-        }
-        
-        // Check for special commands
-        if (command === 'chat') {
-            targetBot.chat(args?.[0] || 'Hello!');
-            return res.json({ success: true, command, result: { message: 'Chat sent' } });
-        }
-        
-        return res.status(400).json({ success: false, error: `Unknown command: ${command}` });
-    } catch (err) {
-        console.error(`HTTP API error: ${err.message}`);
-        return res.status(500).json({ success: false, error: err.message });
-    }
-});
-
-// Send a GPT/AI command (natural language)
-app.post('/ai', async (req, res) => {
-    const { message, bot: botName } = req.body;
-    const targetBot = botRegistry[botName || BOT_CONFIG.username];
-    
-    if (!targetBot) {
-        return res.status(404).json({ success: false, error: `Bot ${botName || BOT_CONFIG.username} not found` });
-    }
-    
-    if (!message) {
-        return res.status(400).json({ success: false, error: 'No message specified' });
-    }
-
-    try {
-        targetBot.currentCommandId = (targetBot.currentCommandId || 0) + 1;
-        const commandId = targetBot.currentCommandId;
-        const response = await performGPTCommand(targetBot, message, commandId);
-        return res.json({ success: true, message, response });
-    } catch (err) {
-        console.error(`HTTP API AI error: ${err.message}`);
-        return res.status(500).json({ success: false, error: err.message });
-    }
-});
-
-// List available commands/skills
-app.get('/commands', (req, res) => {
-    res.json({
-        success: true,
-        skills: Object.keys(skillFunctions),
-        special: ['chat'],
-        endpoints: {
-            'GET /status': 'Get bot health, food, position',
-            'POST /command': 'Execute a skill (body: {command, args[], bot?})',
-            'POST /ai': 'Send natural language command (body: {message, bot?})',
-            'GET /commands': 'List available commands'
-        }
-    });
-});
-
-// Start HTTP server
-app.listen(HTTP_PORT, () => {
-    console.log(`INFO: HTTP API server running on port ${HTTP_PORT}`);
-});
 
 process.on('uncaughtException', (err) => {
     console.error('Uncaught Exception:', err);

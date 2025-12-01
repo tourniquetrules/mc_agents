@@ -1,6 +1,7 @@
 // src/skills/fight.js
 const { goals: { GoalNear } } = require('mineflayer-pathfinder');
 const { sleep } = require('../utils.js');
+const { HOSTILE_MOBS } = require('../constants.js');
 
 async function fight(bot, targetOrName) {
     const commandId = bot.currentCommandId;
@@ -10,13 +11,24 @@ async function fight(bot, targetOrName) {
 
     if (typeof targetOrName === 'string') {
         targetName = targetOrName.toLowerCase();
-        // Find target
-        target = bot.nearestEntity(entity =>
-            entity.name && entity.name.toLowerCase() === targetName &&
-            entity.position.distanceTo(bot.entity.position) < 32 &&
-            (entity.kind === 'HostileMobs' || entity.type === 'mob')
-        );
+
+        // Handle generic "enemy" or "mob"
+        if (['enemy', 'mob', 'hostile', 'monster', 'mobs'].includes(targetName)) {
+             target = bot.nearestEntity(entity =>
+                entity.name && HOSTILE_MOBS.includes(entity.name.toLowerCase()) &&
+                entity.position.distanceTo(bot.entity.position) < 50
+            );
+        } else {
+            // Specific target
+            target = bot.nearestEntity(entity =>
+                entity.name && entity.name.toLowerCase() === targetName &&
+                entity.position.distanceTo(bot.entity.position) < 50
+            );
+        }
+
         if (!target) return { success: true, message: `No ${targetName} found nearby.` };
+        targetName = target.name.toLowerCase();
+
     } else if (typeof targetOrName === 'object' && targetOrName !== null) {
         target = targetOrName;
         targetName = (target.name || "enemy").toLowerCase();
@@ -37,7 +49,7 @@ async function fight(bot, targetOrName) {
                 console.log("Failed to equip bow", err);
             }
         } else {
-            console.log("No bow/arrows, trying melee.");
+            // console.log("No bow/arrows, trying melee.");
             const swords = bot.inventory.items().filter(i => i.name.includes('sword'));
             if (swords.length > 0) await bot.equip(swords[0], 'hand');
         }
@@ -96,8 +108,7 @@ async function fight(bot, targetOrName) {
                  const hasArrows = bot.inventory.items().some(i => i.name.includes('arrow'));
                  if (!hasArrows) {
                      console.log("Out of arrows, switching to melee");
-                     break; // Fall out to melee or return?
-                     // Return for now as we might not have sword equipped logic here dynamic
+                     break; // Fall out to melee
                  }
 
                  bot.activateItem();

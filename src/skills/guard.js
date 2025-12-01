@@ -1,15 +1,7 @@
 // src/skills/guard.js
 const { fight } = require('./fight.js');
 const { sleep } = require('../utils.js');
-
-const HOSTILE_MOBS = [
-    'zombie', 'skeleton', 'spider', 'cave_spider', 'creeper',
-    'enderman', 'witch', 'phantom', 'drowned', 'husk', 'stray',
-    'piglin', 'hoglin', 'zombified_piglin', 'blaze', 'ghast',
-    'wither_skeleton', 'pillager', 'ravager', 'vex', 'vindicator',
-    'evoker', 'guardian', 'elder_guardian', 'shulker', 'slime',
-    'magma_cube', 'silverfish', 'endermite'
-];
+const { HOSTILE_MOBS } = require('../constants.js');
 
 async function guard(bot) {
     const commandId = bot.currentCommandId;
